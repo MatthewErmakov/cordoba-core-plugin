@@ -1,0 +1,55 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Clearfix
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin clearfix {
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Touch & Pointer Bug Fix
+ *
+ * + Disable text select on clickable elements for pointer & touch events
+ *
+ * NOTE:
+ * This should be utilized for elements that have a JS
+ * touchstart or pointerdown event bound to them
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin touch {
+	-webkit-touch-callout: none;
+	user-select: none;
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Background Image Prop
+ *
+ * + Sets up a container to be a bgd image that covers a parent container
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin background-image-prop {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	min-height: 100%;
+	max-height: 100%;
+	width: 100%;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

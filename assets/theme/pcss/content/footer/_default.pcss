@@ -1,0 +1,70 @@
+.site-footer {
+	position: relative;
+	background-color: var(--color-bgd-footer);
+	color: var(--color-iron);
+	text-align: center;
+	padding-top: 45px;
+	margin-top: 70px;
+
+	/* CASE: "sticky" footer
+	flex: none;
+	*/
+
+	@media (--viewport-full) {
+		padding-top: 85px;
+		margin-top: 125px;
+	}
+
+	/* CASE: page has panels */
+	.has-panels & {
+		margin-top: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Footer: Secondary
+ * ----------------------------------------------------------------------------- */
+
+.site-footer__secondary {
+	margin-top: 50px;
+
+	@media (--viewport-full) {
+		margin-top: 104px;
+		padding: 15px 0;
+		background-color: var(--color-shark-alt);
+	}
+
+	.l-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+
+		@media (--viewport-full) {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Footer: Branding
+ * ----------------------------------------------------------------------------- */
+
+.site-footer__logo {
+	width: 200px;
+	height: 63px;
+	margin: 0 auto;
+
+	@media (--viewport-medium) {
+		width: 291px;
+		height: 92px;
+	}
+
+	& + .site-footer__actions {
+		margin-top: 50px;
+
+		@media (--viewport-full) {
+			margin-top: 75px;
+		}
+	}
+}

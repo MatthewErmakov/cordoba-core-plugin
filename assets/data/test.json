@@ -1,0 +1,51 @@
+[
+  {
+    "dealer_number": "",
+    "dealer_name": "IMS Distribution",
+    "address": "ZAC des Champs Chouette 12A",
+    "address_2": "",
+    "city": "Saint Aubin sur Gaillon",
+    "state": "",
+    "zip": 27600,
+    "country": "fr",
+    "phone": "+39 023-2531445",
+    "classification": "Distributor",
+    "brand": "C",
+    "website_cordoba": "www.ims-distribution.com",
+    "website_guild": "",
+    "website_guild_electrics": ""
+  },
+  {
+    "dealer_number": "AMAZON",
+    "dealer_name": "Amazon",
+    "address": "",
+    "address_2": "",
+    "city": "",
+    "state": "",
+    "zip": "",
+    "country": "",
+    "phone": "",
+    "classification": "Dealer",
+    "brand": "https://www.amazon.com/Cordoba-Guitars/",
+    "website_cordoba": "https://www.amazon.com/Musical-Instruments-Guild-Guitars/",
+    "website_guild": "",
+    "website_guild_electrics": ""
+  },
+  {
+
+    "dealer_number": "",
+    "dealer_name": "Sound Circus Music",
+    "address": "Engelgasse 3",
+    "address_2": "",
+    "city": "Biberach",
+    "state": "",
+    "zip": "D-88400",
+    "country": "de",
+    "phone": "",
+    "classification": "Dealer",
+    "brand": "C",
+    "website_cordoba": "",
+    "website_guild": "",
+    "website_guild_electrics": ""
+  }
+]

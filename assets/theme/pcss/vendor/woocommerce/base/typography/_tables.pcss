@@ -1,0 +1,31 @@
+table {
+	max-width: none;
+
+	tfoot {
+		border-top: 1px solid var(--color-border);
+
+		th + td {
+			border-left: 1px solid var(--color-border);
+		}
+
+		td {
+			border-bottom: 1px solid var(--color-border);
+		}
+	}
+
+	/* Responsive table */
+	&.shop_table_responsive {
+
+		td {
+			@media (--viewport-wc-medium-max) {
+				border: 0;
+			}
+		}
+	}
+
+	/* CASE: Downloads table */
+	&.woocommerce-table--order-downloads {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}

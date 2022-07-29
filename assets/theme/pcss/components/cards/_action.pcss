@@ -1,0 +1,29 @@
+.c-card__action {
+	cursor: pointer;
+	color: var(--color-iron-alt-alt);
+	font-size: 40px;
+	display: inline-block;
+	line-height: 0;
+	position: absolute;
+	bottom: 13px;
+	right: 20px;
+	width: 48px;
+	height: 16px;
+
+	@media (--viewport-medium) {
+		font-size: 54px;
+		width: 64px;
+		height: 19px;
+	}
+
+	.icon {
+		line-height: 0;
+		position: relative;
+		top: 7px;
+		right: 13px;
+
+		@media (--viewport-medium) {
+			right: 18px;
+		}
+	}
+}

@@ -1,0 +1,201 @@
+.instrument-dealers {
+	display: flex;
+	flex-wrap: wrap;
+
+	/* CASE: simple variation */
+	&.instrument-dealers--simple {
+		margin-bottom: -15px;
+
+		@media (--viewport-medium) {
+			margin-bottom: -35px;
+		}
+
+		@media (--viewport-full) {
+			margin-bottom: -60px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Dealers: Dealer
+ * ----------------------------------------------------------------------------- */
+
+.instrument-dealers__dealer {
+	width: 50%;
+	text-align: center;
+	border: 1px solid var(--color-nevada-50);
+	border-top: 0;
+	border-left: 0;
+	margin-bottom: -1px;
+	min-height: 160px;
+
+	@media (--viewport-medium) {
+		width: 33.33%;
+		min-height: 200px;
+	}
+
+	@media (--viewport-full) {
+		width: 25%;
+	}
+
+	&:nth-child(2n) {
+		border-right: 0;
+
+		@media (--viewport-medium) {
+			border-right: 1px solid var(--color-nevada-50);
+		}
+	}
+
+	&:nth-child(3n) {
+		@media (--viewport-medium) {
+			border-right: 0;
+		}
+
+		@media (--viewport-full) {
+			border-right: 1px solid var(--color-nevada-50);
+		}
+	}
+
+	&:nth-child(4n) {
+		@media (--viewport-full) {
+			border-right: 0;
+		}
+	}
+
+	/* CASE: simple variation */
+	.instrument-dealers--simple & {
+		border: 0;
+		margin-bottom: 15px;
+
+		@media (--viewport-medium) {
+			margin-bottom: 35px;
+		}
+
+		@media (--viewport-full) {
+			margin-bottom: 60px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Dealers: Dealer Anchor
+ * ----------------------------------------------------------------------------- */
+
+.instrument-dealer__anchor {
+	padding: 10px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: var(--transition-ease);
+
+	@media (--viewport-full) {
+		padding: 20px;
+	}
+
+	&:hover,
+	&:focus {
+		transform: translateY(-5px);
+
+		.instrument-dealer__title {
+			color: var(--color-brown-rust);
+		}
+
+		.instrument-dealer__url {
+			color: var(--color-mako);
+		}
+	}
+
+	&:focus {
+		outline: 0;
+
+		.instrument-dealer__title {
+			outline: 1px dotted;
+		}
+	}
+
+	/* CASE: simple variation */
+	.instrument-dealers--simple & {
+		justify-content: flex-end;
+
+		&:focus {
+			outline: 1px dotted;
+
+			.instrument-dealer__title {
+				outline: 0;
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Dealers: Dealer Media
+ * ----------------------------------------------------------------------------- */
+
+.instrument-dealer__media {
+	max-width: 100px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media (--viewport-medium) {
+		max-width: 150px;
+	}
+}
+
+.instrument-dealer__media-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.instrument-dealer__image {
+	@mixin background-image-prop;
+
+	background-size: contain;
+	background-position: 50% 100%;
+}
+
+/* -----------------------------------------------------------------------------
+ * Dealers: Dealer Title
+ * ----------------------------------------------------------------------------- */
+
+.instrument-dealer__title {
+	transition: var(--transition);
+	font-family: var(--font-family-quando);
+	font-size: 14px;
+	line-height: var(--line-height-115);
+	color: var(--color-mako);
+
+	@media (--viewport-medium) {
+		font-size: 16px;
+	}
+
+	.instrument-dealer__media + & {
+		margin-top: 12px;
+
+		@media (--viewport-medium) {
+			margin-top: 18px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Dealers: Dealer URL
+ * ----------------------------------------------------------------------------- */
+
+.instrument-dealer__url {
+	@mixin wrap-text;
+
+	transition: var(--transition);
+	font-size: 14px;
+	line-height: var(--line-height-115);
+	color: var(--color-brown-rust);
+
+	@media (--viewport-medium) {
+		font-size: 16px;
+	}
+
+	.instrument-dealer__title + & {
+		margin-top: 8px;
+	}
+}

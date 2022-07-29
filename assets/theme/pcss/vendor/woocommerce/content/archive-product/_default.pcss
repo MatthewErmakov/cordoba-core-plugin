@@ -1,0 +1,132 @@
+.post-type-archive-product,
+.tax-product_cat,
+.tax-product_tag {
+
+}
+
+.loop-products {
+
+	.pagination-loop {
+		margin-top: 35px;
+
+		@media (--viewport-medium) {
+			margin-top: 60px;
+		}
+	}
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: var(--grid-gutter-small-half-negative);
+	margin-right: var(--grid-gutter-small-half-negative);
+
+	/* CASE: related product */
+	.item-product__related-products & {
+		@media (--viewport-medium) {
+			max-width: 650px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@media (--viewport-large) {
+			max-width: none;
+			margin-left: var(--grid-gutter-small-half-negative);
+			margin-right: var(--grid-gutter-small-half-negative);
+		}
+	}
+
+	.product {
+		display: flex;
+		width: 50%;
+		padding-left: var(--grid-gutter-small-half);
+		padding-right: var(--grid-gutter-small-half);
+		margin-bottom: 20px;
+
+		@media (--viewport-medium) {
+			width: 33.33%;
+		}
+
+		@media (--viewport-large) {
+			width: 25%;
+		}
+
+		/* CASE: related product */
+		.item-product__related-products & {
+			@media (--viewport-medium) {
+				width: 50%;
+			}
+
+			@media (--viewport-large) {
+				width: 25%;
+			}
+		}
+	}
+
+	.woocommerce-LoopProduct-link {
+		display: block;
+		background-color: var(--color-desert-storm);
+		text-align: center;
+		padding: 10px;
+		transition: var(--transition-ease);
+
+		@media (--viewport-full) {
+			padding: 20px;
+		}
+
+		&:hover,
+		&:focus {
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.18);
+
+			img {
+				opacity: 0.9;
+			}
+
+			.woocommerce-loop-product__title {
+				color: var(--color-brown-rust);
+			}
+		}
+	}
+
+	.woocommerce-loop-product__title {
+		font-family: var(--font-family-quando);
+		font-size: 13px;
+		line-height: var(--line-height-115);
+		color: var(--color-mako);
+		margin-bottom: 6px;
+		transition: var(--transition-ease);
+
+		@media (--viewport-small) {
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+	}
+
+	img {
+		display: block;
+		margin-bottom: 15px;
+		transition: var(--transition-ease);
+		backface-visibility: hidden;
+		width: 100%;
+
+		@media (--viewport-small) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.price {
+		line-height: var(--line-height-115);
+		font-size: 12px;
+		color: var(--color-mako);
+
+		@media (--viewport-small) {
+			font-size: 15px;
+		}
+
+		ins {
+			text-decoration: none;
+			font-weight: var(--font-weight-bold);
+			color: var(--color-brown-rust);
+		}
+	}
+}

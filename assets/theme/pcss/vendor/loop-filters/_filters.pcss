@@ -1,0 +1,314 @@
+body {
+	/* CASE: mobile filter is open */
+	&.tribe-loop-filters--is-open {
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+.tribe-loop-filters__form {
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	backface-visibility: hidden;
+
+	@media (--viewport-full) {
+		position: static;
+		height: auto;
+		overflow: visible;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	/* CASE: mobile filter states */
+	.tribe-loop-filters--is-open & {
+		visibility: visible;
+		height: 100%;
+		animation-name: opacity-in;
+		animation-duration: 0.2s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-in-out;
+	}
+
+	/* CASE: logged in & open */
+	.admin-bar.tribe-loop-filters--is-open & {
+		top: 46px;
+		padding-bottom: 46px;
+
+		@media (--viewport-wpadmin) {
+			top: 32px;
+			padding-bottom: 32px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Wrapper - Outer
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__form-wrapper-outer {
+	height: 100%;
+	padding-top: 104px;
+	background-color: var(--color-white);
+
+	@media (--viewport-full) {
+		padding-top: 0;
+		background-color: transparent;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Wrapper - Inner
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__form-wrapper-inner {
+	padding: 20px var(--grid-gutter-small) 32px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	@media (--viewport-medium) {
+		padding-left: var(--grid-gutter);
+		padding-right: var(--grid-gutter);
+	}
+
+	@media (--viewport-full) {
+		overflow: visible;
+		height: auto;
+		padding: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Form Groups
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__form-group {
+	@mixin clearfix;
+
+	.form-control-group-radio-checkbox {
+		clear: both;
+		line-height: 1;
+	}
+
+	.tribe-loop-filters__filter ~ .tribe-loop-filters__filter {
+		margin-top: 20px;
+	}
+
+	.tribe-loop-filters__filter--has-tooltip {
+		position: relative;
+		padding-right: 30px;
+	}
+}
+
+/* Filters: Form Groups - Filters */
+.tribe-loop-filters__form-group--filters {
+	margin-top: 30px;
+
+	.form-control-group-radio-checkbox {
+		margin-top: 0;
+	}
+
+	& ~ .tribe-loop-filters__form-group--filters {
+		margin-top: 38px;
+
+		.form-control-group-radio-checkbox {
+			padding-top: 26px;
+		}
+	}
+}
+
+/* Filters: Form Groups - Filters - handling of show/hide filters */
+.tribe-loop-filters__form-group-wrapper {
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+
+	/* CASE: showing filters for a taxonomy or not interactive */
+	.tribe-loop-filters__form-group--showing &,
+	.tribe-loop-filters__form-group--not-interactive & {
+		visibility: visible;
+		height: auto;
+		overflow: visible;
+	}
+
+	.form-control-checkbox {
+		padding-left: 32px;
+
+		label {
+
+			&:before {
+				width: 20px;
+				height: 20px;
+				top: -3px;
+			}
+
+			&:after {
+				left: 6px;
+				width: 9px;
+				height: 4px;
+			}
+		}
+
+		input:checked + label {
+			font-weight: var(--font-weight-bold);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Reset
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__reset-trigger {
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 8px;
+	display: inline-block;
+	color: var(--color-jumbo);
+
+	&:visited {
+		color: var(--color-jumbo);
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--color-brown-rust);
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Legend
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__legend {
+	line-height: var(--line-height-12);
+	font-size: 16px;
+	width: 100%;
+	float: left;
+	margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Filters - Show / Hide Trigger
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__filters-show-action {
+	font-weight: var(--font-weight-bold);
+	font-size: 16px;
+	line-height: var(--line-height-12);
+	color: var(--color-nevada);
+	padding: 0 30px 5px 4px;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--color-nevada-50);
+	display: block;
+	transition: var(--transition);
+	position: relative;
+	width: 100%;
+	text-align: left;
+
+	&:hover,
+	&:focus {
+		color: var(--color-mojo);
+
+		.icon {
+			color: var(--color-nevada);
+		}
+	}
+
+	&:focus {
+		outline: 1px dotted;
+	}
+
+	.icon {
+		transition: var(--transition);
+		position: absolute;
+		right: 4px;
+		top: 50%;
+		line-height: 0;
+		color: var(--color-nevada-50);
+		font-size: 18px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Filters - Tooltip
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__tooltip {
+	position: absolute;
+	right: 0;
+	top: -3px;
+}
+
+.tribe-loop-filters__tooltip-trigger {
+	padding: 5px;
+	border: 0;
+	background-color: transparent;
+	transition: var(--transition);
+	line-height: 0;
+	color: var(--color-nevada-50);
+	font-size: 13px;
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+
+	&:hover,
+	&:active,
+	&:focus {
+
+		.icon {
+			color: var(--color-white);
+		}
+
+		& + .tribe-loop-filters__tooltip-content {
+			opacity: 1;
+			visibility: visible;
+			height: auto;
+			overflow: visible;
+			transition: var(--transition);
+		}
+	}
+
+	&:focus {
+		outline: 1px dotted;
+	}
+}
+
+.tribe-loop-filters__tooltip-content {
+	position: absolute;
+	background-color: var(--color-waikawa-grey);
+	color: var(--color-white);
+	padding: 28px 10px 10px;
+	font-size: 12px;
+	line-height: 1.25;
+	font-weight: var(--font-weight-medium);
+	right: -4px;
+	z-index: 1;
+	top: -2px;
+	width: 150px;
+	transition: none;
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+
+	@media (--viewport-full) {
+		right: auto;
+		left: -4px;
+	}
+}

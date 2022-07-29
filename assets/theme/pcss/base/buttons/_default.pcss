@@ -1,0 +1,28 @@
+a[class*="button"],
+button[class*="button"] {
+
+	.t-content & {
+		margin-top: var(--spacer-xs);
+		margin-bottom: var(--spacer-xs);
+		margin-right: 12px;
+	}
+
+	/* CASE: inline buttons case */
+	& + a[class*="button"],
+	& + button[class*="button"],
+	br + & {
+		margin-top: 12px;
+	}
+
+	/* CASE: button group - center */
+	.u-button-group-center & {
+		margin: 12px 6px 0;
+		width: 100%;
+		text-align: left;
+
+		@media (--viewport-xsmall) {
+			width: auto;
+			text-align: center;
+		}
+	}
+}

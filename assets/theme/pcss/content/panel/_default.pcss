@@ -1,0 +1,272 @@
+
+/* -----------------------------------------------------------------------------
+ * Panels Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel-collection {
+	/* CASE: Is post single / similar stories implentation
+	 needs to get tweaked if actually supports panels */
+	.single-post & {
+		margin-top: 70px;
+		margin-bottom: -70px;
+
+		@media (--viewport-full) {
+			margin-top: 125px;
+			margin-bottom: -125px;
+		}
+	}
+
+	/* CASE: has panels & page content */
+	.has-panels.has-page-content & {
+		margin-top: 70px;
+
+		@media (--viewport-full) {
+			margin-top: 125px;
+		}
+	}
+
+	/* CASE: has panels & is instrument post type */
+	.has-panels.single-guitar &,
+	.has-panels.single-ukulele & {
+		margin-top: 45px;
+
+		@media (--viewport-full) {
+			margin-top: 78px;
+		}
+	}
+}
+
+/* CASE: page is panels only page */
+.is-panels-page {
+
+}
+
+/* CASE: page has content / not panels only page */
+.has-page-content {
+
+}
+
+/* CASE: page has panels */
+.has-panels {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Panel Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel {
+	position: relative;
+	padding-top: 45px;
+	padding-bottom: 45px;
+
+	@media (--viewport-full) {
+		padding-top: 78px;
+		padding-bottom: 78px;
+	}
+
+	/* CASE: home page */
+	.home & {
+		/* CASE: last panel */
+		&:not(.panel--supports-bgd-image):last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	/* CASE: panel needs to negate margin (ex. for cards) */
+	.panel--negative-margin {
+		margin-bottom: -35px;
+
+		@media (--viewport-medium) {
+			margin-bottom: -58px;
+		}
+	}
+
+	/* CASE: first panel */
+	&:first-child {
+
+	}
+
+	/* CASE: last panel */
+	&:last-child {
+		padding-bottom: 52px;
+
+		@media (--viewport-full) {
+			padding-bottom: 95px;
+		}
+
+		/* CASE: panel needs to negate margin (ex. for cards) */
+		.panel--negative-margin {
+			margin-bottom: 0;
+
+			/*
+			margin-bottom: -52px;
+			@media (--viewport-medium) {
+				margin-bottom: -95px;
+			}
+			*/
+		}
+	}
+
+	/* CASE: background image driven panel */
+	&.panel--supports-bgd-image {
+		/* CASE: first panel */
+		&:first-child:not(.item-instrument__section) {
+			padding-top: calc(var(--spacer-site-header-full) + 8%);
+			padding-bottom: 14%;
+
+			@media (--viewport-medium) {
+				padding-top: calc(var(--spacer-site-header-xlarge) + 6%);
+			}
+
+			@media (--viewport-full) {
+				padding-top: calc(var(--spacer-site-header-xxlarge) + 6%);
+			}
+
+			/* CASE: wrapper that creates content height */
+			.panel--supports-bgd-image__wrapper {
+				align-items: flex-end;
+				min-height: 25vh;
+				height: 100%;
+				width: 100%;
+				flex-direction: row;
+			}
+
+			/* CASE: header shadow/overlay */
+			.panel--overlay {
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 100%;
+					left: 0;
+					right: 0;
+					height: 100%;
+					top: 0;
+					bottom: 0;
+					background: var(--gradient-black-to-top-0-35);
+
+					@media (--viewport-full) {
+						background: var(--gradient-black-to-top-0-6);
+					}
+				}
+			}
+		}
+
+		/* CASE: Setup next sibling stroke */
+		& + .panel {
+
+			&:before {
+				@mixin brush-stroke-global;
+				@mixin brush-stroke-position-top;
+			}
+
+			&.u-bc-desert-storm {
+
+				&:before {
+					@mixin brush-stroke-top--desert-storm;
+				}
+			}
+
+			&.u-bc-white {
+
+				&:before {
+					@mixin brush-stroke-top--white;
+				}
+			}
+		}
+
+		/* CASE: extra spacing for certain panels that come as next sibling */
+		& + .panel--type-imagetext,
+		& + .panel--type-gallery,
+		& + .panel--type-wysiwyg--style-is-boxed,
+		& + .panel--type-video--style-is-inline,
+		& + .panel--type-video--style-is-boxed {
+			padding-top: 65px;
+
+			@media (--viewport-full) {
+				padding-top: 105px;
+			}
+		}
+
+		/* CASE: extra spacing for certain panels that come as previous sibling */
+		.panel:not(.panel--supports-bgd-image):not(.panel--type-interstitial):not(.panel--type-wysiwyg--style-is-brushed) + & {
+			margin-top: 55px;
+
+			@media (--viewport-full) {
+				margin-top: 82px;
+			}
+		}
+
+		/* CASE: WYSIWYG panel with brush stroke style is next sibling */
+		& + .panel--type-wysiwyg--style-is-brushed {
+			padding-top: 0;
+		}
+	}
+
+	/* CASE: image text & video / boxed mobile spacing */
+	&.panel--type-imagetext,
+	&.panel--type-video--style-is-boxed {
+
+		& + .panel--type-interstitial {
+			margin-top: 45px;
+
+			@media (--viewport-full) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	/* CASE: interstitial panel */
+	&.panel--type-interstitial {
+		padding-bottom: 0;
+
+		& + .panel:not(.panel--supports-bgd-image) {
+			padding-top: 100px;
+
+			@media (--viewport-small) {
+				padding-top: 155px;
+			}
+
+			@media (--viewport-medium) {
+				padding-top: 160px;
+			}
+
+			@media (--viewport-large) {
+				padding-top: 205px;
+			}
+		}
+
+		/* CASE: background image driven panel is next sibling */
+		& + .panel--supports-bgd-image {
+			margin-top: 75px;
+
+			@media (--viewport-small) {
+				margin-top: 125px;
+			}
+
+			@media (--viewport-medium) {
+				margin-top: 145px;
+			}
+
+			@media (--viewport-large) {
+				margin-top: 225px;
+			}
+		}
+	}
+
+	/* CASE: WYSIWYG panel with brush stroke style */
+	&.panel--type-wysiwyg--style-is-brushed {
+		/* CASE: background image driven panel is next sibling */
+		& + .panel--supports-bgd-image {
+			margin-top: -45px;
+			padding-top: 52px;
+
+			@media (--viewport-full) {
+				margin-top: -78px;
+				padding-top: 95px;
+			}
+		}
+	}
+}

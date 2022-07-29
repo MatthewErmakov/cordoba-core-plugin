@@ -1,0 +1,106 @@
+.single-product {
+
+}
+
+.item-product {
+	/* CASE: product single cart form tweaks */
+	.form-field-group {
+		margin-bottom: 20px;
+	}
+
+	.form-control {
+		@media (--viewport-medium) {
+			max-width: 150px;
+		}
+	}
+
+	/* CASE: product single social share tweaks */
+	.social-share {
+		text-align: center;
+		margin-top: 20px;
+
+		@media (--viewport-medium) {
+			display: inline-block;
+			margin-top: 0;
+		}
+	}
+}
+
+/* CASE: product has thumbnail */
+.has-post-thumbnail {
+
+}
+
+/* CASE: simple product type */
+.product-type-simple {
+
+}
+
+/* CASE: external product type */
+.product-type-external {
+
+	.cart {
+		display: inline-block;
+	}
+}
+
+/* CASE: variable product type */
+.product-type-variable {
+
+}
+
+/* CASE: grouped product type */
+.product-type-grouped {
+
+}
+
+/* CASE: product has gallery */
+.item-product--has-gallery {
+
+}
+
+/* CASE: product has no gallery */
+.item-product--has-no-gallery {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Product: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.item-product__wrapper {
+	@media (--viewport-full) {
+		display: flex;
+	}
+
+	& > * {
+		@media (--viewport-full) {
+			flex: 1 1 50%;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Product: Wrapper - Content
+ * ----------------------------------------------------------------------------- */
+
+.item-product__content {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Product: Wrapper - Gallery
+ * ----------------------------------------------------------------------------- */
+
+.woocommerce-product-gallery {
+	@mixin clearfix;
+
+	margin-bottom: 28px;
+	max-width: 550px;
+
+	@media (--viewport-full) {
+		margin-right: var(--grid-gutter);
+		margin-bottom: 0;
+		max-width: none;
+	}
+}

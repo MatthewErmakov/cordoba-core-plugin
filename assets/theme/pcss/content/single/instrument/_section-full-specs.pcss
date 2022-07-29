@@ -1,0 +1,129 @@
+.panel.item-instrument__section--full-specs {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Section: Full Specs - Trigger
+ * ----------------------------------------------------------------------------- */
+
+.item-instrument__full-specs-trigger-wrapper {
+	position: relative;
+	text-align: center;
+	margin: 0 var(--grid-gutter-small-negative);
+
+	@media (--viewport-medium) {
+		margin: 0 auto;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		height: 3px;
+		background-color: var(--color-nevada);
+		width: 100%;
+		top: 50%;
+		left: 0;
+		right: 0;
+	}
+}
+
+/* Trigger */
+.item-instrument__full-specs-trigger {
+	border: 3px solid var(--color-nevada);
+	z-index: 1;
+	position: relative;
+	padding: 20px 20px 18px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Section: Full Specs - Trigger Icon
+ * ----------------------------------------------------------------------------- */
+
+.item-instrument__full-specs-icon {
+	margin-left: 4px;
+	position: relative;
+	top: 1px;
+}
+
+/* Trigger - Open */
+.item-instrument__full-specs-icon--open {
+	/* CASE: content is open */
+	.instrument-specs--is-open & {
+		display: none;
+	}
+}
+
+/* Trigger - Close */
+.item-instrument__full-specs-icon--close {
+	display: none;
+
+	/* CASE: content is open */
+	.instrument-specs--is-open & {
+		display: inline;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Section: Full Specs - Table
+ * ----------------------------------------------------------------------------- */
+
+.item-instrument__full-specs {
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+	transition: var(--transition-opacity-ease-in-out);
+	backface-visibility: hidden;
+
+	/* CASE: content is open */
+	.instrument-specs--is-open & {
+		visibility: visible;
+		height: 100%;
+	}
+}
+
+table.item-instrument__full-specs-table {
+	font-size: 14px;
+	border: 0;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+	margin-top: 35px;
+
+	@media (--viewport-medium) {
+		font-size: var(--font-size-content-s);
+		margin-top: 75px;
+	}
+
+	tbody {
+
+	}
+
+	tr {
+
+		&:nth-child(even) {
+			background-color: var(--color-desert-storm);
+		}
+	}
+
+	th,
+	td {
+		width: 50%;
+		padding: 14px 1em 12px;
+		line-height: var(--line-height-125);
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Section: Full Specs - Table
+ * ----------------------------------------------------------------------------- */
+
+.item-instrument__full-specs-disclaimer {
+	padding: 14px 16px 12px;
+	font-size: 14px;
+
+	@media (--viewport-medium) {
+		font-size: var(--font-size-content-s);
+	}
+}

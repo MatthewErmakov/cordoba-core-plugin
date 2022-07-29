@@ -1,0 +1,31 @@
+.c-card__meta {
+	font-size: 16px;
+	font-weight: var(--font-weight-medium);
+	line-height: var(--line-height-115);
+	letter-spacing: var(--letter-spacing-025);
+	color: var(--color-jumbo);
+
+	@media (--viewport-medium) {
+		font-size: 18px;
+	}
+
+	/* CASE: simple style/layout - centered and no border */
+	.c-card--simple & {
+		font-size: 16px;
+		font-weight: var(--font-weight-regular);
+	}
+
+	/* CASE: simple style/layout refined for mobile */
+	.c-card--simple-mobile-refined & {
+		font-size: 13px;
+		font-weight: var(--font-weight-regular);
+
+		@media (--viewport-full) {
+			font-size: 16px;
+		}
+	}
+}
+
+.c-card__meta-item {
+
+}

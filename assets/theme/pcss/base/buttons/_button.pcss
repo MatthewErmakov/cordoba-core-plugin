@@ -1,0 +1,162 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Button: Default
+ *
+ * Notes:
+ * + Has border and transparent background
+ * + On hover/focus animate to background color
+ *
+ * Example:
+ * <button class="button">...</button>
+ * <a href="#" class="button">...</a>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.button,
+a.button {
+	@mixin button-global;
+
+	font-size: 14px;
+	text-align: center;
+	color: var(--color-mako);
+	border: 3px solid var(--color-bombay);
+	letter-spacing: var(--letter-spacing-04);
+	padding: 16px 2em 14px;
+
+	@media (--viewport-medium) {
+		font-size: 18px;
+		letter-spacing: var(--letter-spacing-05);
+		padding: 21px 2em 19px;
+	}
+
+	&:visited {
+		color: var(--color-mako);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--color-white);
+		border-color: var(--color-mako-alt);
+		background-color: var(--color-mako-alt);
+	}
+
+	&:active,
+	&:focus {
+		outline: 1px dotted;
+	}
+}
+
+/* Button: With Icon */
+.button--icon-arrow-right-decor,
+a.button--icon-arrow-right-decor {
+	text-transform: uppercase;
+	position: relative;
+	padding-right: calc(55px + 1.35em);
+	padding-left: 1.35em;
+
+	@media (--viewport-medium) {
+		padding-right: calc(72px + 1.35em);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		&:after {
+			animation: bump-right 350ms var(--ease-out-sine);
+			color: var(--color-jumbo);
+		}
+	}
+
+	&:after {
+		@mixin icon;
+
+		content: var(--icon-arrow-right-decor);
+		color: var(--color-iron-alt-alt);
+		font-size: 40px;
+		display: inline-block;
+		vertical-align: middle;
+		position: absolute;
+		top: 50%;
+		transition: var(--transition-ease);
+		margin-top: -8px;
+		width: 48px;
+		height: 16px;
+		line-height: 14px;
+		text-indent: -13px;
+		right: 18px;
+
+		@media (--viewport-medium) {
+			font-size: 54px;
+			width: 64px;
+			height: 19px;
+			line-height: 15px;
+			text-indent: -18px;
+			right: 23px;
+			margin-top: -9px;
+		}
+	}
+}
+
+/* Button: White Text */
+.button--white,
+a.button--white {
+	color: var(--color-white);
+	border-color: var(--color-white-50);
+
+	&:visited {
+		color: var(--color-white);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: var(--color-mako-alt);
+
+		&:after {
+			color: var(--color-white);
+		}
+	}
+}
+
+/* Button: White Text on Mojo Background */
+.button--mojo,
+a.button--mojo {
+	background-color: var(--color-mojo);
+	color: var(--color-white);
+	border-color: var(--color-mojo);
+
+	&:visited {
+		background-color: var(--color-mojo);
+		color: var(--color-white);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--color-brown-rust);
+		border-color: var(--color-brown-rust);
+	}
+}
+
+/* Button: White Text on Mako Alt Background */
+.button--mako-alt,
+a.button--mako-alt {
+	background-color: var(--color-mako-alt);
+	color: var(--color-white);
+	border-color: var(--color-mako-alt);
+
+	&:visited {
+		background-color: var(--color-mako-alt);
+		color: var(--color-white);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--color-waikawa-grey);
+		border-color: var(--color-waikawa-grey);
+	}
+}

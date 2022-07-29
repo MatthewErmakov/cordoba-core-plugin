@@ -1,0 +1,108 @@
+.panel--type-wysiwyg {
+
+}
+
+/* CASE: Boxed Style */
+.panel--type-wysiwyg--style-boxed {
+
+}
+
+/* CASE: Brushed Style */
+.panel--type-wysiwyg--style-brushed {
+	padding-top: 55px;
+	padding-bottom: 48px;
+
+	@media (--viewport-full) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * WYSIWYG: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-wysiwyg__wrapper {
+	position: relative;
+	z-index: 1;
+
+	/* CASE: Boxed Style */
+	&.panel--type-wysiwyg--style-boxed {
+		padding-left: var(--grid-gutter-small);
+		padding-right: var(--grid-gutter-small);
+
+		@media (--viewport-medium) {
+			padding-left: var(--grid-gutter);
+			padding-right: var(--grid-gutter);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * WYSIWYG: Wrapper - Content
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-wysiwyg__content {
+	position: relative;
+
+	/* CASE: Brushed Style */
+	.panel--type-wysiwyg--style-boxed & {
+		border: 3px solid var(--color-nevada-50);
+		padding-top: 40px;
+		padding-bottom: 45px;
+
+		@media (--viewport-medium) {
+			padding-top: 60px;
+			padding-bottom: 65px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			background-color: var(--color-desert-storm);
+			left: -20px;
+			right: -20px;
+			top: 20px;
+			height: 50%;
+			z-index: -1;
+
+			@media (--viewport-medium) {
+				top: 30px;
+				left: -30px;
+				right: -30px;
+			}
+		}
+
+		/* CASE: Brush Stroke */
+		&:after {
+			@mixin brush-stroke-global;
+			@mixin brush-stroke-position-bottom-negative;
+			@mixin brush-stroke-bottom--desert-storm;
+
+			display: block;
+			width: auto;
+			z-index: -1;
+			bottom: calc(50% - 27px);
+			left: -20px;
+			right: -20px;
+
+			@media (--viewport-medium) {
+				bottom: calc(50% - 37px);
+				left: -30px;
+				right: -30px;
+			}
+
+			@media (--viewport-full) {
+				bottom: calc(50% - 47px);
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * WYSIWYG: Column
+ * ----------------------------------------------------------------------------- */
+
+.panel-wysiwyg__column {
+
+}

@@ -1,0 +1,210 @@
+.woocommerce-cart {
+	/* Cart Totals */
+	.cart_totals {
+		@media (--viewport-wc-medium) {
+			max-width: 500px;
+			width: 100% !important;
+		}
+	}
+
+	.woocommerce-cart-form__contents {
+		/* TD: Product Thumbnail */
+		.product-thumbnail {
+
+			img {
+				max-width: 80px;
+			}
+		}
+
+		/* TD: Quantity */
+		.product-quantity {
+			@media (--viewport-wc-medium) {
+				width: 110px;
+			}
+
+			input {
+				padding: 0 8px;
+				width: 75px;
+				display: inline-block;
+
+				@media (--viewport-wc-medium-max) {
+					height: 32px;
+					margin-top: -7px;
+					margin-bottom: -6px;
+				}
+
+				@media (min-width: 550px) and (--viewport-wc-medium-max) {
+					width: 90px;
+				}
+
+				@media (--viewport-wc-medium) {
+					width: 100%;
+				}
+			}
+
+			.form-field-group {
+				margin-bottom: 0;
+			}
+		}
+
+		/* Actions */
+		.actions {
+			padding-left: 0;
+			padding-right: 0;
+
+			@media (--viewport-wc-medium) {
+				padding: 25px 0 0;
+			}
+		}
+
+		/* Coupons */
+		.coupon {
+
+			.input-text {
+				margin-bottom: 20px;
+				width: 100% !important;
+				height: 45px;
+
+				@media (--viewport-wc-medium) {
+					margin-bottom: 0;
+					width: 200px !important;
+					display: inline-block;
+					vertical-align: top;
+					margin-right: 3px;
+				}
+			}
+
+			button[name="apply_coupon"] {
+				float: none !important;
+				width: 100% !important;
+				margin-bottom: 10px;
+				height: 45px;
+
+				@media (--viewport-wc-medium) {
+					width: auto !important;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		/* Buttons: Update Cart & Coupons */
+		button[name="update_cart"],
+		button[name="apply_coupon"] {
+			padding: 0 2em;
+			font-size: 14px;
+			height: 45px;
+			margin-top: 0;
+			margin-right: 0;
+
+			&[disabled] {
+				opacity: 0.4;
+				cursor: default;
+				border: 3px solid var(--color-bombay);
+				background-color: transparent;
+				color: var(--color-mako);
+			}
+		}
+	}
+}
+
+/* Collaterals */
+.cart-collaterals {
+	@mixin clearfix;
+
+	table {
+
+		th + td {
+			@media (--viewport-wc-medium) {
+				border-left: 1px solid var(--color-border);
+			}
+		}
+
+		td {
+			@media (--viewport-wc-medium) {
+				border-bottom: 1px solid var(--color-border);
+			}
+		}
+	}
+
+	table.shop_table_responsive tr:nth-child(2n) {
+		@media (--viewport-wc-medium-max) {
+			background-color: rgba(0, 0, 0, 0.025);
+		}
+
+		td {
+			@media (--viewport-wc-medium-max) {
+				background-color: transparent;
+			}
+		}
+	}
+
+	tr.shipping td {
+		@media (--viewport-wc-medium-max) {
+			@mixin clearfix;
+		}
+	}
+
+	/* Shipping Calculator */
+	.woocommerce-shipping-calculator {
+		margin: 15px 0 0;
+		width: 100%;
+
+		@media (--viewport-wc-medium-max) {
+			float: right;
+		}
+
+		p {
+			margin-bottom: 0;
+			text-align: right;
+		}
+
+		.shipping-calculator-form {
+			margin-top: 15px;
+		}
+
+		.form-field-group {
+			margin-bottom: 12px;
+		}
+
+		button[name="calc_shipping"] {
+			margin-top: 0;
+			width: 100%;
+		}
+
+		.shipping-calculator-button {
+			font-size: 14px;
+		}
+	}
+
+	/* Coupons */
+	.woocommerce-remove-coupon {
+		font-size: 14px;
+	}
+}
+
+/* Shipping Methods */
+#shipping_method {
+	margin: 0 0 15px;
+	text-align: left;
+	position: relative;
+	top: 5px;
+	padding-left: 0;
+
+	@media (--viewport-wc-medium-max) {
+		float: right;
+	}
+
+	label {
+		font-weight: var(--font-weight-regular);
+	}
+}
+
+/* Proceed to Checkout Actions */
+.wc-proceed-to-checkout {
+	margin-top: 35px;
+
+	a {
+		display: block;
+		width: 100%;
+	}
+}

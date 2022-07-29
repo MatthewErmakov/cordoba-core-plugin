@@ -1,0 +1,159 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Form Control: Radio & Checkbox, simple / default
+ *
+ * Example (Checkbox):
+ * <fieldset>
+ *   <legend>Legend for Checkboxes</legend>
+ * 	 <div class="form-field-group">
+ * 	   <span class="form-control-checkbox">
+ * 	     <input id="checkboxOne" name="checkboxGroup" type="checkbox" value="checkboxOne" checked="checked" />
+ *	     <label for="checkboxOne">Checkbox One</label>
+ * 	   </span>
+ * 	   <span class="form-control-checkbox">
+ * 	     <input id="checkboxTwo" name="checkboxGroup" type="checkbox" value="checkboxTwo" />
+ * 	     <label for="checkboxTwo">Checkbox two</label>
+ * 	   </span>
+ *   </div>
+ * </fieldset>
+ *
+ * Example (Radio):
+ * <div class="form-field-group">
+ *   <span class="form-control-radio">
+ *     <input id="radioExample" name="radioExample" type="radio" value="RadioExample" checked="checked" />
+ *     <label for="radioExample">Radio Example</label>
+ *   </span>
+ * </div>
+ *
+ * ----------------------------------------------------------------------------- */
+
+input {
+
+	&[type="radio"],
+	&[type="checkbox"] {
+		margin-bottom: 0;
+	}
+}
+
+.form-control-checkbox,
+.form-control-radio {
+	@mixin form-control-radio-checkbox-base;
+
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin-right: var(--form-control-radio-checkbox-push-label-right);
+	}
+}
+
+.form-control-checkbox ~ .form-control-checkbox,
+.form-control-radio ~ .form-control-radio {
+	margin-top: var(--form-control-radio-checkbox-margin-top);
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Form Control Layout: Radio & Checkbox, inline to 3 column layout
+ *
+ * Notes:
+ * + Applies to both static marked up and Gravity Forms radio and checkbox
+ *
+  * Example (Checkbox):
+ * <fieldset>
+ *   <legend>Legend for Checkboxes</legend>
+ * 	 <div class="form-field-group form-field-group--inline-to-3">
+ * 	   <span class="form-control-checkbox">
+ * 	     <input id="checkboxOne" name="checkboxGroup" type="checkbox" value="checkboxOne" checked="checked" />
+ *	     <label for="checkboxOne">Checkbox One</label>
+ * 	   </span>
+ * 	   <span class="form-control-checkbox">
+ * 	     <input id="checkboxTwo" name="checkboxGroup" type="checkbox" value="checkboxTwo" />
+ * 	     <label for="checkboxTwo">Checkbox two</label>
+ * 	   </span>
+ *   </div>
+ * </fieldset>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.form-field-group--inline-to-3 {
+	margin-bottom: 14px;
+
+	.form-control-checkbox,
+	.form-control-radio,
+	.gfield_checkbox li,
+	.gfield_radio li {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 -4px 14px 0;
+		padding-right: 10px;
+
+		@media (--viewport-small) {
+			width: 33.33%;
+		}
+	}
+
+	/* CASE: Gravity Forms */
+	&.gf-checkbox,
+	&.gf-radio {
+		margin-bottom: 14px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Form Control: Radio & Checkbox, custom styled
+ *
+ * Example (Checkbox):
+ * <fieldset>
+ *   <legend>Legend for Checkboxes</legend>
+ * 	 <div class="form-field-group">
+ * 	   <span class="form-control-checkbox form-control-custom-style">
+ * 	     <input id="checkboxOne" name="checkboxGroup" type="checkbox" value="checkboxOne" checked="checked" />
+ *	     <label for="checkboxOne">Checkbox One</label>
+ * 	   </span>
+ * 	   <span class="form-control-checkbox form-control-custom-style">
+ * 	     <input id="checkboxTwo" name="checkboxGroup" type="checkbox" value="checkboxTwo" />
+ * 	     <label for="checkboxTwo">Checkbox two</label>
+ * 	   </span>
+ *   </div>
+ * </fieldset>
+ *
+ * Example (Radio):
+ * <div class="form-field-group">
+ *   <span class="form-control-radio form-control-custom-style">
+ *     <input id="radioExample" name="radioExample" type="radio" value="RadioExample" checked="checked" />
+ *     <label for="radioExample">Radio Example</label>
+ *   </span>
+ * </div>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.form-control-checkbox,
+.form-control-radio {
+
+	&.form-control-custom-style {
+		@mixin form-control-radio-checkbox;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Form Control: Checkbox
+ * ----------------------------------------------------------------------------- */
+
+.form-control-checkbox {
+	/* CASE: Custom Styled */
+	&.form-control-custom-style {
+		@mixin form-control-checkbox;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Form Control: Radio
+ * ----------------------------------------------------------------------------- */
+
+.form-control-radio {
+	/* CASE: Custom Styled */
+	&.form-control-custom-style {
+		@mixin form-control-radio;
+	}
+}

@@ -1,0 +1,168 @@
+div.woocommerce-notice {
+	border: 2px solid var(--color-waikawa-grey);
+	font-weight: var(--font-weight-medium);
+	padding: 18px 15px 14px;
+	line-height: var(--line-height-115);
+	margin-bottom: 28px;
+
+	@media (--viewport-medium) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	& * {
+		font-weight: var(--font-weight-medium);
+		font-size: 15px;
+		line-height: var(--line-height-115);
+
+		@media (--viewport-medium) {
+			font-size: 16px;
+		}
+	}
+
+	/* Setup spacing for login & coupon notices */
+	.woocommerce-checkout div.woocommerce > & {
+		margin-bottom: 0;
+
+		& ~ .woocommerce-notice {
+			margin-top: 12px;
+		}
+	}
+
+	/* CASE: Add top margin for order confirmation */
+	.woocommerce-order-received & {
+		margin-top: 45px;
+		margin-bottom: 0;
+
+		@media (--viewport-medium) {
+			margin-top: 52px;
+		}
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	li {
+		padding-right: 0;
+		padding-left: 0;
+
+		& ~ li {
+			margin-top: 8px;
+		}
+	}
+
+	a {
+		border: 0 !important;
+		border-bottom: 1px solid currentColor !important;
+		padding: 0;
+		letter-spacing: 0;
+		background-color: transparent !important;
+	}
+}
+
+/* CASE: Success */
+div.woocommerce-notice--success {
+	border-color: var(--color-apple);
+
+	/* CASE: Has Icon */
+	&.woocommerce-notice--icon {
+
+		&:before {
+			content: var(--icon-check-circle);
+			color: var(--color-apple);
+		}
+	}
+
+	a {
+		color: var(--color-apple);
+
+		&:visited {
+			color: var(--color-apple);
+		}
+
+		&:hover,
+		&:focus {
+			color: darken(var(--color-apple), 0.25);
+		}
+	}
+}
+
+/* CASE: Error */
+div.woocommerce-notice--error {
+	border-color: var(--form-color-error);
+
+	/* CASE: Has Icon */
+	&.woocommerce-notice--icon {
+
+		&:before {
+			content: var(--icon-alert-circle);
+			color: var(--form-color-error);
+		}
+	}
+
+	a {
+		color: var(--form-color-error);
+
+		&:visited {
+			color: var(--form-color-error);
+		}
+
+		&:hover,
+		&:focus {
+			color: darken(var(--form-color-error), 0.25);
+		}
+	}
+}
+
+/* CASE: Info */
+div.woocommerce-notice--info {
+	/* CASE: Has Icon */
+	&.woocommerce-notice--icon {
+
+		&:before {
+			content: var(--icon-info-circle);
+			color: var(--color-waikawa-grey);
+		}
+	}
+
+	a {
+		color: var(--color-waikawa-grey);
+
+		&:visited {
+			color: var(--color-waikawa-grey);
+		}
+
+		&:hover,
+		&:focus {
+			color: darken(var(--color-waikawa-grey), 0.25);
+		}
+	}
+}
+
+/* CASE: Has Icon */
+div.woocommerce-notice--icon {
+	position: relative;
+	padding-left: 50px;
+
+	&:before {
+		@mixin icon;
+
+		position: absolute;
+		left: 12px;
+		font-size: 26px;
+		top: 50%;
+		transform: translateY(-50%);
+
+		@media (--viewport-medium) {
+			left: 13px;
+		}
+	}
+}

@@ -1,0 +1,70 @@
+
+/* -----------------------------------------------------------------------------
+ * Global Quotes & Blockquotes
+ * ----------------------------------------------------------------------------- */
+
+.blockquote,
+blockquote,
+.quote,
+q {
+
+	.t-content & {
+		max-width: 100%;
+		margin: var(--spacer-m) auto;
+
+		@media (--viewport-medium) {
+			margin: 40px auto;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Quotes
+ * ----------------------------------------------------------------------------- */
+
+/* q */
+.quote,
+.t-content q {
+	@mixin quote-base;
+	@mixin quote-text;
+
+	display: block;
+}
+
+/* -----------------------------------------------------------------------------
+ * Blockquotes
+ * ----------------------------------------------------------------------------- */
+
+/* blockquote */
+.blockquote,
+.t-content blockquote {
+	@mixin quote-base;
+
+	p {
+		@mixin quote-text;
+
+		margin: 0 auto;
+
+		& ~ p {
+			margin-top: var(--spacer);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Cite
+ * ----------------------------------------------------------------------------- */
+
+/* cite */
+.cite,
+.t-content cite {
+	color: var(--color-dove-grey);
+	font-family: var(--font-family-base);
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+	font-style: normal;
+	display: block;
+	font-size: 13px;
+	margin-top: var(--spacer);
+	letter-spacing: var(--letter-spacing-05);
+}

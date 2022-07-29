@@ -1,0 +1,210 @@
+.panel--type-hero {
+	position: relative;
+	background-color: var(--color-shark);
+
+	/* CASE: Handles IE flex/min-height bug */
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+}
+
+/* CASE: Has Title */
+.panel--type-hero--has-title {
+
+}
+
+/* CASE: Has No Title */
+.panel--type-hero--has-no-title {
+
+}
+
+/* CASE: Has Image */
+.panel--type-hero--has-image {
+
+}
+
+/* CASE: Has No Image */
+.panel--type-hero--has-no-image {
+
+}
+
+/* CASE: Left Layout */
+.panel--type-hero--layout-left {
+
+}
+
+/* CASE: Center Layout */
+.panel--type-hero--layout-center {
+
+}
+
+/* CASE: Right Layout */
+.panel--type-hero--layout-right {
+
+}
+
+/* CASE: Boxed Style */
+.panel--type-hero--style-boxed {
+
+}
+
+/* CASE: Inline Style */
+.panel--type-hero--style-inline {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__wrapper {
+	display: flex;
+	min-height: calc((9 / 16) * 100vw);
+	justify-content: center;
+	width: 100%;
+	flex-direction: column;
+
+	/* height: 100%; */
+
+	@media (--viewport-full) {
+		min-height: 64vh;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Wrapper - Content
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__content {
+	position: relative;
+	width: 100%;
+
+	/* z-index: 1; */
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Wrapper Inner - Content
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__wrapper-content {
+	/* CASE: Has Image */
+	.panel--type-hero--has-image & {
+		opacity: 0;
+		transition: var(--transition-opacity-with-delay);
+	}
+
+	/* CASE: Image Loaded */
+	.panel--type-hero--has-image .lazyloaded + .panel--type-hero__content & {
+		opacity: 1;
+	}
+}
+
+.panel--type-hero__wrapper-content-inner {
+	max-width: var(--grid-width-630);
+	margin: 0 auto;
+
+	/* CASE: Left Layout */
+	.panel--type-hero--layout-left & {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	/* CASE: Right Layout */
+	.panel--type-hero--layout-right & {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	/* CASE: Boxed Style */
+	.panel--type-hero--style-boxed & {
+		border: 3px solid var(--color-white);
+		border-top: 0;
+		padding: 0 var(--grid-gutter-small) 20px;
+
+		@media (--viewport-medium) {
+			padding: 0 var(--grid-gutter) 24px;
+		}
+	}
+
+	/* CASE: Has No Title & Boxed Style */
+	.panel--type-hero--style-boxed.panel--type-hero--has-no-title & {
+		border-top: 3px solid var(--color-white);
+		padding-top: 30px;
+
+		@media (--viewport-medium) {
+			padding-top: 35px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Media
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__media {
+	@mixin background-image-prop;
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Title
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__title {
+	/* CASE: Boxed Style */
+	.panel--type-hero--style-boxed & {
+		display: flex;
+		justify-content: center;
+		margin-left: var(--grid-gutter-small-negative);
+		margin-right: var(--grid-gutter-small-negative);
+		position: relative;
+		top: -17px;
+		margin-bottom: 4px;
+
+		@media (--viewport-medium) {
+			margin-left: var(--grid-gutter-negative);
+			margin-right: var(--grid-gutter-negative);
+			top: -25px;
+		}
+
+		&:before,
+		&:after {
+			background-color: var(--color-white);
+			content: '\a0';
+			flex-grow: 1;
+			height: 3px;
+			position: relative;
+			top: 0.5em;
+			display: block;
+		}
+
+		&:before {
+			margin-right: 15px;
+		}
+
+		&:after {
+			margin-left: 15px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Content
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__text {
+	font-weight: var(--font-weight-medium);
+	margin-bottom: 5px;
+
+	/* CASE: Inline Style */
+	.panel--type-hero--style-inline & {
+		margin-bottom: 18px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Hero: Links
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-hero__link {
+
+}

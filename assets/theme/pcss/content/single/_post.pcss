@@ -1,0 +1,67 @@
+.single {
+
+}
+
+/* CASE: Single Item Back To X Anchor */
+.item__back-anchor-wrapper {
+	text-align: left;
+}
+
+.item__back-anchor {
+	margin-bottom: 30px;
+	display: inline-block;
+
+	.single-guitar &,
+	.single-ukulele & {
+		@media (--viewport-medium) {
+			margin-bottom: 45px;
+		}
+	}
+
+	i {
+		font-size: 15px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Single: Footer
+ * ----------------------------------------------------------------------------- */
+
+.item-single__footer {
+	margin-top: 40px;
+
+	& > * ~ * {
+		margin-top: 42px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Single: Footer - Meta (Tags)
+ * ----------------------------------------------------------------------------- */
+
+.item-single__meta-tags {
+
+}
+
+.item-single__meta-tags-item {
+	display: inline;
+	text-transform: uppercase;
+	font-weight: var(--font-weight-medium);
+	font-size: 15px;
+	line-height: var(--line-height-115);
+	color: var(--color-mako);
+	margin-right: 4px;
+
+	a {
+		color: var(--color-brown-rust);
+
+		&:hover,
+		&:focus {
+			color: var(--color-apricot);
+		}
+	}
+}
+
+.item-single__meta-tags-list {
+	display: inline;
+}

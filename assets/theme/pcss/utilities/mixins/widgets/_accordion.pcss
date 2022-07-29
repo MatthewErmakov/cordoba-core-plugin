@@ -1,0 +1,16 @@
+/* -----------------------------------------------------------------------------
+ *
+ * Widget: Accordion
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin accordion-active {
+
+	.widget-accordion__header {
+		color: var(--ac_active_header);
+
+		.icon:before {
+			content: var(--icon-angle-down);
+		}
+	}
+}

@@ -1,0 +1,37 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Layout: 3 Up
+ *
+ * Example:
+ * <div class="l-wrapper">
+ *   <div class="l-upto3">
+ *     ...
+ *   </div>
+ * </div>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.l-upto3 {
+	@media (--viewport-medium) {
+		display: flex;
+		margin-left: var(--grid-gutter-half-negative);
+		margin-right: var(--grid-gutter-half-negative);
+	}
+
+	& > * {
+		@media (--viewport-medium) {
+			flex: 1 1 33.33%;
+			padding-left: var(--grid-gutter-half);
+			padding-right: var(--grid-gutter-half);
+		}
+
+		& ~ * {
+			margin-top: 50px;
+
+			@media (--viewport-medium) {
+				margin-top: 0;
+			}
+		}
+	}
+}

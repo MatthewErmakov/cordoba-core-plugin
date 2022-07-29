@@ -1,0 +1,219 @@
+.nav-primary__list-item--instruments {
+	@media (--viewport-full) {
+		position: static;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Child Menu / List
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__list-child--instruments {
+	@media (--viewport-full) {
+		padding: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 900px;
+		right: auto;
+	}
+
+	@media (--viewport-large) {
+		width: var(--grid-width-970);
+	}
+
+	/* CASE: This Top-level child menu active */
+	.nav-primary__list-item--child-active & {
+		@media (--viewport-full) {
+			display: flex;
+			height: 360px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Child List Items
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__list-item--instrument {
+	@media (--viewport-full) {
+		flex: 1;
+		border-bottom: 0;
+		margin-right: -1px;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	& ~ .nav-primary__list-item--instrument {
+		@media (--viewport-full) {
+			margin-top: 0;
+			position: relative;
+		}
+
+		&:before {
+			@media (--viewport-full) {
+				content: '';
+				position: absolute;
+				left: 0;
+				height: calc(100% - 100px);
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1px;
+				background-color: var(--color-alto);
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Child List Item Action
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--instrument {
+	@media (--viewport-full) {
+		display: block;
+		text-align: center;
+		padding: 25px 30px;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		transition: var(--transition-bgd-color-ease);
+	}
+
+	&:hover,
+	&:focus {
+		@media (--viewport-full) {
+			background-color: var(--color-mako);
+		}
+
+		.nav-primary__action--instrument_text {
+			@media (--viewport-full) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			strong,
+			span {
+				@media (--viewport-full) {
+					color: var(--color-white);
+				}
+			}
+		}
+
+		.nav-primary__action--instrument_image-on-hover {
+			@media (--viewport-full) {
+				opacity: 1;
+			}
+		}
+
+		.nav-primary__action--instrument_image-non-hover {
+			@media (--viewport-full) {
+				transform: translateY(100%);
+			}
+		}
+	}
+
+	&:before {
+		@media (--viewport-full) {
+			content: none;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Child List Item Action Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--instrument_wrapper {
+	@media (--viewport-full) {
+		height: 100%;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Child List Item Action Text
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--instrument_text {
+	@media (--viewport-full) {
+		transition: var(--transition-ease);
+		position: absolute;
+		top: 25px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	strong {
+		font-weight: var(--font-weight-medium);
+
+		@media (--viewport-full) {
+			font-family: var(--font-family-quando);
+			font-weight: var(--font-weight-regular);
+			font-size: 34px;
+			display: block;
+			margin-bottom: 3px;
+		}
+	}
+
+	span {
+		display: none;
+
+		@media (--viewport-full) {
+			color: var(--color-brown-rust);
+			font-weight: var(--font-weight-bold);
+			font-size: 13px;
+			display: block;
+			text-transform: uppercase;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Image On Hover
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--instrument_image-on-hover {
+	@media (--viewport-full) {
+		@mixin background-image-prop;
+
+		transition: var(--transition-ease);
+		opacity: 0;
+	}
+
+	/* CASE: Overlay */
+	&:after {
+		@media (--viewport-full) {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			right: 0;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			background: var(--color-black-35);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Instruments Menu Item: Image Not On Hover
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--instrument_image-non-hover {
+	@media (--viewport-full) {
+		position: absolute;
+		bottom: 70px;
+		height: calc(100% - 178px);
+		left: 0;
+		right: 0;
+		transition: var(--transition-ease);
+		margin: auto;
+		background-position: 50% 50%;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}

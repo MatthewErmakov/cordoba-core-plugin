@@ -1,0 +1,129 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Decor: Brush Strokes
+ *
+ * ----------------------------------------------------------------------------- */
+
+/*
+.u-decor-brushtroke {
+
+	&:before {
+		@mixin brush-stroke-global;
+	}
+}
+*/
+
+.u-decor-brushtroke--neg-gutters {
+
+	&:before {
+		@mixin brush-stroke-global-negative-gutters;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Brush Strokes: Position
+ *
+ * ----------------------------------------------------------------------------- */
+
+.u-decor-brushtroke--position-top {
+
+	&:before {
+		@mixin brush-stroke-global;
+		@mixin brush-stroke-position-top;
+	}
+}
+
+.u-decor-brushstroke--position-top-as-bottom {
+
+	&:before {
+		@mixin brush-stroke-global;
+		@mixin brush-stroke-position-top-as-bottom;
+	}
+}
+
+.u-decor-brushtroke--position-bottom {
+
+	&:after {
+		@mixin brush-stroke-global;
+		@mixin brush-stroke-position-bottom;
+	}
+}
+
+.u-decor-brushtroke--position-bottom-negative {
+
+	&:after {
+		@mixin brush-stroke-global;
+		@mixin brush-stroke-position-bottom-negative;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Brush Strokes: Colors
+ *
+ * ----------------------------------------------------------------------------- */
+
+.u-decor-brushtroke--top {
+
+	&:before {
+		@mixin brush-stroke-top;
+	}
+}
+
+.u-decor-brushtroke--top-white {
+
+	&:before {
+		@mixin brush-stroke-top--white;
+	}
+}
+
+.u-decor-brushtroke--top-desert-storm {
+
+	&:before {
+		@mixin brush-stroke-top--desert-storm;
+	}
+}
+
+.u-decor-brushtroke--top-as-bottom-white {
+
+	&:before {
+		@mixin brush-stroke-bottom--white;
+	}
+}
+
+.u-decor-brushtroke--bottom {
+
+	&:after {
+		@mixin brush-stroke-bottom;
+	}
+}
+
+.u-decor-brushtroke--bottom-white {
+
+	&:after {
+		@mixin brush-stroke-bottom--white;
+	}
+}
+
+.u-decor-brushtroke--bottom-desert-storm {
+
+	&:after {
+		@mixin brush-stroke-bottom--desert-storm;
+	}
+}
+
+.u-decor-brushtroke--bottom-as-top-white {
+
+	&:after {
+		@mixin brush-stroke-top--white;
+	}
+}
+
+.u-decor-brushtroke--bottom-as-top-desert-storm {
+
+	&:after {
+		@mixin brush-stroke-top--desert-storm;
+	}
+}

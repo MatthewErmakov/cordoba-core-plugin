@@ -1,0 +1,42 @@
+.create-account {
+	clear: both;
+}
+
+p.create-account {
+
+	&.form-row {
+		margin-bottom: 0;
+		padding-top: 6px;
+
+		@media (--viewport-full) {
+			padding-top: 10px;
+		}
+	}
+
+	.form-control-checkbox.form-control-custom-style {
+
+		label {
+			font-weight: var(--font-weight-bold);
+		}
+	}
+}
+
+div.create-account {
+	margin-top: 20px;
+	padding: 21px 20px 25px;
+	border: 2px solid var(--color-waikawa-grey);
+	background-color: var(--color-white);
+
+	@media (--viewport-medium) {
+		padding: 28px 25px 32px;
+	}
+
+	p:first-child {
+		max-width: 600px;
+		margin-bottom: 25px;
+	}
+}
+
+#account_password_field {
+	margin-bottom: 0;
+}

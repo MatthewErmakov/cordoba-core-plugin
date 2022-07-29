@@ -1,0 +1,105 @@
+.site-navigation {
+	opacity: 0;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+	z-index: 1004;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: var(--color-white);
+	transition: var(--transition-opacity-ease-in-out);
+	backface-visibility: hidden;
+
+	@media (--viewport-full) {
+		position: static;
+		background-color: transparent;
+		height: auto;
+		overflow: visible;
+		visibility: visible;
+		opacity: 1;
+		text-align: right;
+		transition: none;
+		flex: 1;
+		margin-left: 10px;
+		padding-right: 40px;
+		margin-top: 30px;
+		z-index: auto;
+	}
+
+	@media (--viewport-large) {
+		padding-right: 95px;
+	}
+
+	/* CASE: mobile navigation is active */
+	.site-navigation--is-open & {
+		visibility: visible;
+		height: 100%;
+	}
+
+	.site-navigation--is-active & {
+		opacity: 1;
+	}
+
+	/* CASE: scrolled in */
+	.site-header--has-scrolled-in & {
+		@media (--viewport-full) {
+			margin-top: 0;
+		}
+	}
+
+	/* CASE: logged in */
+	.admin-bar & {
+		top: 46px;
+
+		@media (--viewport-wpadmin) {
+			top: 32px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Navigation: Wrapper - Outer
+ * ----------------------------------------------------------------------------- */
+
+.site-navigation__wrapper-outer {
+	height: 100%;
+	padding-top: 52px;
+
+	@media (--viewport-full) {
+		padding-top: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Navigation: Wrapper - Inner
+ * ----------------------------------------------------------------------------- */
+
+.site-navigation__wrapper-inner {
+	padding: 0;
+	height: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	/* CASE: logged in */
+	.admin-bar & {
+		padding-bottom: 46px;
+
+		@media (--viewport-wpadmin) {
+			padding-bottom: 32px;
+		}
+
+		@media (--viewport-full) {
+			padding-bottom: 0;
+		}
+	}
+
+	@media (--viewport-full) {
+		overflow: visible;
+		height: auto;
+		padding: 0;
+	}
+}

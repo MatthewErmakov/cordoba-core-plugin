@@ -1,0 +1,70 @@
+.panel--type-interstitial {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Interstitial: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-interstitial__wrapper {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Interstitial: Media
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-interstitial__media {
+	position: relative;
+	top: 50px;
+	z-index: 2;
+
+	@media (--viewport-small) {
+		top: 90px;
+	}
+
+	@media (--viewport-medium) {
+		top: 115px;
+	}
+
+	@media (--viewport-large) {
+		top: 175px;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Interstitial: Content
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-interstitial__content {
+	max-width: var(--grid-width-870);
+	margin: 0 auto -35px;
+
+	@media (--viewport-small) {
+		margin-bottom: -75px;
+	}
+
+	@media (--viewport-medium) {
+		margin-bottom: -105px;
+	}
+
+	@media (--viewport-large) {
+		margin-bottom: -190px;
+	}
+
+	@media (--viewport-xlarge) {
+		margin-bottom: -210px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Interstitial: Text
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-interstitial__text {
+
+}

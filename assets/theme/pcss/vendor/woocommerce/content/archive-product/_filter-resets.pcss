@@ -1,0 +1,83 @@
+.shop-filters__resets {
+	@mixin clearfix;
+
+	margin-bottom: 28px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Filter Resets: Results Count
+ * ----------------------------------------------------------------------------- */
+
+.woocommerce-result-count {
+	color: var(--color-jumbo);
+	font-style: italic;
+	font-size: 12px;
+	margin-bottom: 15px;
+
+	@media (--viewport-small) {
+		float: right;
+		margin-top: 5px;
+		margin-bottom: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filter Resets: Order By
+ * ----------------------------------------------------------------------------- */
+
+.woocommerce-ordering {
+	width: 185px;
+	margin-bottom: 35px;
+
+	@media (--viewport-full) {
+		margin-bottom: 50px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filter Resets: Resets
+ * ----------------------------------------------------------------------------- */
+
+.widget_layered_nav_filters {
+
+	.widgettitle {
+		@mixin visually-hide;
+	}
+
+	ul {
+
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 12px;
+	}
+
+	a {
+		line-height: var(--line-height-115);
+		display: block;
+		font-weight: var(--font-weight-bold);
+		font-size: 16px;
+		color: var(--color-nevada);
+		padding: 5px 0;
+
+		&:visited {
+			color: var(--color-nevada);
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--color-brown-rust);
+		}
+
+		&:before {
+			@mixin icon;
+
+			content: var(--icon-cancel);
+			font-size: 19px;
+			margin-right: 4px;
+			position: relative;
+			top: 2px;
+		}
+	}
+}

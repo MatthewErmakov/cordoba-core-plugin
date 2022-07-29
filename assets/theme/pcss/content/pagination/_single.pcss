@@ -1,0 +1,111 @@
+.pagination-single {
+	margin-top: 50px;
+
+	@media (--viewport-medium) {
+		margin-top: 125px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Pagination: List
+ * ----------------------------------------------------------------------------- */
+
+.pagination-single__list {
+	@mixin clearfix;
+}
+
+/* -----------------------------------------------------------------------------
+ * Pagination: List Item
+ * ----------------------------------------------------------------------------- */
+
+.pagination-single__item {
+	width: 50%;
+}
+
+.pagination-single__item--next {
+	float: left;
+}
+
+.pagination-single__item--previous {
+	float: right;
+	text-align: right;
+}
+
+/* -----------------------------------------------------------------------------
+ * Pagination: List Item Anchor
+ * ----------------------------------------------------------------------------- */
+
+.pagination-single__item-anchor {
+	color: var(--color-brown-rust);
+	font-size: 13px;
+	text-transform: uppercase;
+	line-height: var(--line-height-115);
+	font-weight: var(--font-weight-bold);
+
+	@media (--viewport-medium) {
+		font-size: 15px;
+	}
+
+	&:visited {
+		color: var(--color-brown-rust);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--color-apricot);
+	}
+
+	.icon {
+		color: var(--color-iron-alt-alt);
+		font-size: 35px;
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		bottom: 2px;
+		line-height: 0;
+
+		@media (--viewport-medium) {
+			font-size: 50px;
+			bottom: 3px;
+		}
+	}
+}
+
+.pagination-single__item-anchor--next {
+	padding-right: 10px;
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		.icon {
+			animation: bump-left 350ms var(--ease-out-sine);
+		}
+	}
+}
+
+.pagination-single__item-anchor--previous {
+	padding-left: 10px;
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		.icon {
+			animation: bump-right 350ms var(--ease-out-sine);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Pagination: List Item Text
+ * ----------------------------------------------------------------------------- */
+
+.pagination-single__item-text--full {
+	@mixin visually-hide;
+
+	@media (--viewport-medium) {
+		@mixin visually-show;
+	}
+}

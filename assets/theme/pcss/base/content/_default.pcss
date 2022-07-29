@@ -1,0 +1,57 @@
+
+/* -------------------------------------------------------------------------
+ *
+ * Content: "Kitchen Sink"
+ *
+ * Notes:
+ * + "t-content" is what used to be "context-content"
+ *
+ * ------------------------------------------------------------------------- */
+
+.t-content {
+
+	& > {
+		/* CASE: remove top margin from first element */
+		*:first-child {
+			margin-top: 0;
+		}
+
+		/* CASE: remove bottom margin from bottom element */
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* CASE: Remove decor from images */
+.t-content--clean-images {
+
+	& > .wp-image {
+
+		.wp-image--decor {
+			padding-top: 0;
+			padding-left: 0;
+			padding-right: 0;
+
+			&:after {
+				content: none;
+			}
+		}
+	}
+}
+
+/* CASE: Tighten spacing between first image and first adjacent
+   sibling (For use in say WYSIWYG panel) */
+.t-content--tighten-first-image-spacing {
+
+	& > .wp-image {
+
+		&:first-child {
+			margin-bottom: 30px;
+
+			& + * {
+				margin-top: 30px;
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.button[type="submit"],
+a.checkout-button {
+	margin-top: 10px;
+
+	&:not([name="update_cart"]):not([name="apply_coupon"]) {
+		background-color: var(--color-mojo);
+		color: var(--color-white);
+		border-color: var(--color-mojo);
+
+		&:visited {
+			background-color: var(--color-mojo);
+			color: var(--color-white);
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--color-brown-rust);
+			border-color: var(--color-brown-rust);
+		}
+	}
+
+	@media (--viewport-medium) {
+		margin-top: 16px;
+	}
+}

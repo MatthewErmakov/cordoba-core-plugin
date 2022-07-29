@@ -1,0 +1,140 @@
+.widget-accordion {
+	margin: 0 auto;
+
+	/* CASE: active & live panel preview */
+	.active,
+	.modular-content-live-preview & {
+		@mixin accordion-active;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Accordion: Row
+ * ----------------------------------------------------------------------------- */
+
+.widget-accordion__row {
+
+}
+
+/* CASE: FAQ Mode */
+.widget-accordion--faq-mode {
+
+	.widget-accordion__header,
+	.widget-accordion__content-inner {
+		padding-left: 35px;
+
+		@media (--viewport-medium) {
+			padding-left: 45px;
+		}
+	}
+
+	.icon {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Accordion: Row - Header
+ * ----------------------------------------------------------------------------- */
+
+.widget-accordion__header {
+	cursor: pointer;
+	background: var(--ac_header_bg);
+	border-bottom: 1px solid var(--ac_border);
+	padding: 16px 20px 15px 25px;
+	position: relative;
+	font-size: 15px;
+	transition: var(--transition);
+
+	@media (--viewport-medium) {
+		padding: 16px 30px 15px 35px;
+	}
+
+	@media (--viewport-full) {
+		font-size: 18px;
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--ac_active_header);
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	.icon {
+		left: 0;
+		font-size: 25px;
+		color: var(--color-brown-rust);
+		line-height: 0;
+		top: 48%;
+		transform: translateY(-50%);
+		position: absolute;
+
+		@media (--viewport-medium) {
+			font-size: 34px;
+		}
+	}
+
+	/* CASE: active & live panel preview */
+	.active &,
+	.modular-content-live-preview & {
+		background: var(--ac_header_bg_active);
+		border-color: var(--ac_header_bg_active);
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Accordion: Row - Content
+ * ----------------------------------------------------------------------------- */
+
+.widget-accordion__content {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+
+	/* CASE: first & live panel preview */
+	&.first,
+	.modular-content-live-preview & {
+		height: auto;
+	}
+}
+
+/* CASE: Content Inner */
+.widget-accordion__content-inner {
+	padding: 6px 20px 30px 25px;
+	background: var(--color-white);
+
+	@media (--viewport-medium) {
+		padding: 6px 30px 55px 35px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Accordion: Row - Q&A Icons
+ * ----------------------------------------------------------------------------- */
+
+.widget-accordion-q,
+.widget-accordion-a {
+	left: 0;
+	font-weight: var(--font-weight-bold);
+	color: var(--ac_q_text);
+	line-height: 0;
+	position: absolute;
+	font-size: 16px;
+
+	@media (--viewport-medium) {
+		font-size: 22px;
+	}
+}
+
+.widget-accordion-q {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.widget-accordion-a {
+	top: 18px;
+}

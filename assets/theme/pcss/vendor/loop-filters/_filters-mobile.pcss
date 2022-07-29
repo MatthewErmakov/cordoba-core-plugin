@@ -1,0 +1,66 @@
+/* -----------------------------------------------------------------------------
+ * Filters: Mobile Trigger
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__trigger {
+	z-index: 3;
+	line-height: 1.15;
+	font-size: 16px;
+	font-weight: var(--font-weight-bold);
+	display: block;
+	color: var(--color-white);
+	padding: 18px 60px 16px var(--grid-gutter-small);
+	transition: var(--transition);
+	width: 100%;
+	border: 0;
+	text-align: left;
+	background-color: var(--color-mako-alt);
+	position: relative;
+
+	@media (--viewport-medium) {
+		padding-left: var(--grid-gutter);
+	}
+
+	@media (--viewport-full) {
+		display: none;
+		visibility: hidden;
+	}
+
+	/* CASE: mobile filters are open, hovered, or focused */
+	.tribe-loop-filters--is-open &,
+	&:hover,
+	&:focus {
+		color: var(--color-white);
+		background-color: var(--color-nevada);
+	}
+
+	.tribe-loop-filters--is-open & {
+		z-index: 1005;
+		position: fixed;
+		top: 52px;
+	}
+
+	.tribe-loop-filters--is-open.admin-bar & {
+		top: calc(var(--spacer-wp-admin-mobile) + 52px);
+
+		@media (--viewport-wpadmin) {
+			top: calc(var(--spacer-wp-admin-desktop) + 52px);
+		}
+	}
+
+	&:focus {
+		outline: 1px dotted;
+	}
+}
+
+/* Trigger: Icon */
+.tribe-loop-filters__trigger-icon {
+	position: absolute;
+	right: var(--grid-gutter-small);
+	top: 50%;
+	line-height: 0;
+
+	@media (--viewport-medium) {
+		right: var(--grid-gutter);
+	}
+}

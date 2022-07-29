@@ -1,0 +1,37 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Title Decor Underline
+ *
+ * Screenshot: https://cloudup.com/c4p1K6cv3dk & https://cloudup.com/c48nMTVjNmp
+ *
+ * Example:
+ * <h1 class="h1 u-title-decor">...</h1>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.u-title-decor {
+
+	&:after {
+		@mixin icon;
+
+		line-height: 0;
+		display: block;
+		content: var(--icon-line-decor);
+		font-size: 70px;
+		margin-top: 18px;
+
+		@media (--viewport-medium) {
+			font-size: 104px;
+			margin-top: 20px;
+		}
+	}
+
+	/* CASE: Color - Bombay Alt */
+	&.u-title-decor--color-bombay-alt {
+
+		&:after {
+			color: var(--color-bombay-alt);
+		}
+	}
+}

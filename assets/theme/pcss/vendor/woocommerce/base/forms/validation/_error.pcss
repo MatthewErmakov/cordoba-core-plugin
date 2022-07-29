@@ -1,0 +1,17 @@
+.woocommerce-invalid-required-field {
+
+	.input-text {
+		border-color: var(--form-state-color-error);
+		box-shadow: 0 0 0 1px var(--form-state-color-error);
+	}
+
+	input[type="file"] {
+
+		&.form-control-custom-style {
+
+			& + label {
+				background-color: var(--form-state-color-error);
+			}
+		}
+	}
+}

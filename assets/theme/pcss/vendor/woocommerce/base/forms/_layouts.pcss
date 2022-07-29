@@ -1,0 +1,26 @@
+form {
+
+	.form-row-first,
+	.form-row-last {
+		float: none;
+		width: 100%;
+
+		@media (--viewport-medium) {
+			width: 50%;
+		}
+	}
+
+	.form-row-first {
+		@media (--viewport-medium) {
+			float: left;
+			padding-right: var(--grid-gutter-half);
+		}
+	}
+
+	.form-row-last {
+		@media (--viewport-medium) {
+			float: right;
+			padding-left: var(--grid-gutter-half);
+		}
+	}
+}

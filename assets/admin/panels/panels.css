@@ -1,0 +1,4 @@
+/* Hides the Gallery repeater link label */
+.panel-type-gallery .input-name-image_link .panel-group-label {
+	display: none !important;
+}

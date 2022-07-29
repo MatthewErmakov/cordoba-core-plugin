@@ -1,0 +1,119 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Global Brush Strokes
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin brush-stroke-global {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 1;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 100% 100%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 7px;
+
+	@media (--viewport-full) {
+		height: 17px;
+	}
+}
+
+@define-mixin brush-stroke-global-negative-gutters {
+	left: var(--grid-gutter-small-negative);
+	right: var(--grid-gutter-small-negative);
+	width: auto;
+
+	@media (--viewport-medium) {
+		left: var(--grid-gutter-negative);
+		right: var(--grid-gutter-negative);
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Brush Strokes: Position
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin brush-stroke-position-top {
+	top: -7px;
+
+	@media (--viewport-full) {
+		top: -17px;
+	}
+}
+
+@define-mixin brush-stroke-position-top-as-bottom {
+	top: 0;
+}
+
+@define-mixin brush-stroke-position-bottom {
+	bottom: 0;
+}
+
+@define-mixin brush-stroke-position-bottom-negative {
+	bottom: -7px;
+
+	@media (--viewport-full) {
+		bottom: -17px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Brush Strokes: Colors
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin brush-stroke-top {
+	background-image: svg-load('decor/top-mobile.svg');
+
+	@media (--viewport-full) {
+		background-image: svg-load('decor/top.svg');
+	}
+}
+
+@define-mixin brush-stroke-top--white {
+	background-image: svg-load('decor/top-mobile.svg', fill=var(--color-white));
+
+	@media (--viewport-full) {
+		background-image: svg-load('decor/top.svg', fill=var(--color-white));
+	}
+}
+
+@define-mixin brush-stroke-top--desert-storm {
+	background-image: svg-load('decor/top-mobile.svg', fill=var(--color-desert-storm));
+
+	@media (--viewport-full) {
+		background-image: svg-load('decor/top.svg', fill=var(--color-desert-storm));
+	}
+}
+
+@define-mixin brush-stroke-bottom {
+	background-image: svg-load('decor/bottom-mobile.svg');
+
+	@media (--viewport-full) {
+		background-image: svg-load('decor/bottom.svg');
+	}
+}
+
+@define-mixin brush-stroke-bottom--white {
+	background-image: svg-load('decor/bottom-mobile.svg', fill=var(--color-white));
+
+	@media (--viewport-full) {
+		background-image: svg-load('decor/bottom.svg', fill=var(--color-white));
+	}
+}
+
+@define-mixin brush-stroke-bottom--desert-storm {
+	background-image: svg-load('decor/bottom-mobile.svg', fill=var(--color-desert-storm));
+
+	@media (--viewport-full) {
+		background-image: svg-load('decor/bottom.svg', fill=var(--color-desert-storm));
+	}
+}

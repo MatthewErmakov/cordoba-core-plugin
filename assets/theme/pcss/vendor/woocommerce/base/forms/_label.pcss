@@ -1,0 +1,27 @@
+label {
+	@mixin form-control-label;
+
+	/* CASE: additional label context */
+	em {
+		font-weight: var(--font-weight-regular);
+		font-style: normal;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Form Heading
+ * ----------------------------------------------------------------------------- */
+
+.woocommerce-form__heading {
+	font-size: 21px;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-12);
+	color: var(--color-text);
+	width: 100%;
+	padding-top: 28px;
+	margin-bottom: 31px;
+
+	@media (--viewport-medium) {
+		font-size: 30px;
+	}
+}

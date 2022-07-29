@@ -1,0 +1,140 @@
+.pagination-loop {
+	width: 100%;
+	text-align: center;
+	margin-top: 18px;
+}
+
+.pagination-loop__list {
+	@mixin clearfix;
+
+	width: 100%;
+	font-size: 15px;
+	font-weight: var(--font-weight-bold);
+}
+
+/* -----------------------------------------------------------------------------
+ * Pagination: Items
+ * ----------------------------------------------------------------------------- */
+
+.pagination-loop__item {
+	display: none;
+	text-align: center;
+	vertical-align: top;
+	width: 48px;
+	margin: 0 5px;
+
+	@media (--viewport-medium) {
+		width: 30px;
+		display: inline-block;
+		margin: 0 1px;
+	}
+
+	/* CASE: Current list item */
+	&.pagination-loop__item--is-current {
+		display: inline-block;
+	}
+
+	/* CASE: Current list item inner */
+	.current {
+		color: var(--color-brown-rust);
+		display: block;
+	}
+
+	/* CASE: Dots */
+	.dots {
+		color: var(--color-jumbo);
+	}
+
+	a,
+	span:not(.pagination-loop__item-text) {
+		width: 100%;
+		height: 48px;
+		line-height: 50px;
+		display: block;
+
+		@media (--viewport-medium) {
+			height: 30px;
+			line-height: 32px;
+		}
+	}
+
+	a {
+		color: var(--color-jumbo);
+
+		&:visited {
+			color: var(--color-jumbo);
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--color-brown-rust);
+		}
+	}
+}
+
+/* Pagination: Items - Next & Previous */
+.pagination-loop__item--previous,
+.pagination-loop__item--next {
+	display: inline-block;
+	width: auto;
+}
+
+/* Pagination: Items - Previous */
+.pagination-loop__item--previous {
+	@media (--viewport-medium) {
+		margin: 0;
+	}
+}
+
+/* Pagination: Items - Next */
+.pagination-loop__item--next {
+	@media (--viewport-medium) {
+		margin: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Pagination: Anchors
+ * ----------------------------------------------------------------------------- */
+
+a.pagination-loop__anchor {
+	color: var(--color-iron-alt-alt);
+
+	&:visited {
+		color: var(--color-iron-alt-alt);
+	}
+
+	&:hover,
+	&:focus {
+
+		.icon {
+			animation: bump-right 350ms var(--ease-out-sine);
+			color: var(--color-jumbo);
+		}
+	}
+
+	.icon {
+		font-size: 40px;
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		bottom: 3px;
+		line-height: 0;
+		transition: var(--transition-ease);
+
+		@media (--viewport-medium) {
+			font-size: 54px;
+			bottom: 4px;
+		}
+	}
+
+	span {
+
+	}
+}
+
+/* Pagination: Anchor - Next & Previous */
+.pagination-loop__anchor--previous,
+.pagination-loop__anchor--next {
+
+}

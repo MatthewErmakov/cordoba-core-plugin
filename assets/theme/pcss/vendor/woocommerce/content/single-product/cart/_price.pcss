@@ -1,0 +1,48 @@
+.woocommerce-variation-price,
+.item-product__price {
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-115);
+	font-size: 18px;
+	color: var(--color-mako);
+
+	ins {
+		text-decoration: none;
+		color: var(--color-brown-rust);
+	}
+
+	.woocommerce-price-suffix {
+		margin-top: 4px;
+		display: block;
+		color: var(--color-jumbo);
+		font-weight: var(--font-weight-medium);
+	}
+
+	abbr {
+		text-decoration: none;
+	}
+}
+
+.item-product__price-prefix {
+	margin-right: 4px;
+
+	/* CASE: on sale */
+	.sale:not(.product-type-variable):not(.product-type-grouped) &,
+	.woocommerce-variation-price--sale &,
+	.item-product__group-item.actually-on-sale.product-type-grouped & {
+		text-decoration: line-through;
+		margin-right: -1px;
+
+		span {
+			letter-spacing: 5px;
+		}
+	}
+}
+
+.woocommerce-Price-suffix-currency {
+	display: none;
+
+	/* CASE: single product */
+	.item-product .item-product__wrapper & {
+		display: inline;
+	}
+}

@@ -1,0 +1,29 @@
+.tribe-loop-filters__sidebar {
+	margin-left: var(--grid-gutter-small-negative);
+	margin-right: var(--grid-gutter-small-negative);
+
+	@media (--viewport-medium) {
+		margin-left: var(--grid-gutter-negative);
+		margin-right: var(--grid-gutter-negative);
+	}
+
+	@media (--viewport-full) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Sidebar: Title
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__title {
+	@mixin visually-hide;
+
+	font-size: 26px;
+	line-height: var(--line-height-1);
+
+	@media (--viewport-full) {
+		@mixin visually-show;
+	}
+}

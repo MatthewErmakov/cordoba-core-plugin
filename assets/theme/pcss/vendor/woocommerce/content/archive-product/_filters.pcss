@@ -1,0 +1,338 @@
+body {
+	/* CASE: mobile filter is open */
+	&.shop-filters--is-open {
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+.shop-filters {
+	margin-left: var(--grid-gutter-small-negative);
+	margin-right: var(--grid-gutter-small-negative);
+
+	@media (--viewport-medium) {
+		margin-left: var(--grid-gutter-negative);
+		margin-right: var(--grid-gutter-negative);
+	}
+
+	@media (--viewport-full) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.shop-filters__nav {
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	backface-visibility: hidden;
+
+	@media (--viewport-full) {
+		position: static;
+		height: auto;
+		overflow: visible;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	/* CASE: mobile filter states */
+	.shop-filters--is-open & {
+		visibility: visible;
+		height: 100%;
+		animation-name: opacity-in;
+		animation-duration: 0.2s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-in-out;
+	}
+
+	/* CASE: logged in & open */
+	.admin-bar.shop-filters--is-open & {
+		top: 46px;
+		padding-bottom: 46px;
+
+		@media (--viewport-wpadmin) {
+			top: 32px;
+			padding-bottom: 32px;
+		}
+	}
+}
+
+.shop-filters__wrapper-outer {
+	height: 100%;
+	padding-top: 104px;
+	background-color: var(--color-white);
+
+	@media (--viewport-full) {
+		padding-top: 0;
+		background-color: transparent;
+	}
+}
+
+.shop-filters__wrapper-inner {
+	padding: 20px var(--grid-gutter-small) 32px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+
+	@media (--viewport-medium) {
+		padding-left: var(--grid-gutter);
+		padding-right: var(--grid-gutter);
+	}
+
+	@media (--viewport-full) {
+		overflow: visible;
+		height: auto;
+		padding: 0;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Title
+ * ----------------------------------------------------------------------------- */
+
+.shop-filters__title {
+	@mixin visually-hide;
+
+	font-size: 26px;
+	line-height: var(--line-height-1);
+
+	@media (--viewport-full) {
+		@mixin visually-show;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Trigger
+ * ----------------------------------------------------------------------------- */
+
+.shop-filters__trigger {
+	z-index: 3;
+	line-height: 1.15;
+	font-size: 16px;
+	font-weight: var(--font-weight-bold);
+	display: block;
+	color: var(--color-white);
+	padding: 18px 60px 16px var(--grid-gutter-small);
+	transition: var(--transition);
+	width: 100%;
+	border: 0;
+	text-align: left;
+	background-color: var(--color-mako-alt);
+	position: relative;
+
+	@media (--viewport-medium) {
+		padding-left: var(--grid-gutter);
+	}
+
+	@media (--viewport-full) {
+		display: none;
+		visibility: hidden;
+	}
+
+	/* CASE: mobile filters are open, hovered, or focused */
+	.shop-filters--is-open &,
+	&:hover,
+	&:focus {
+		color: var(--color-white);
+		background-color: var(--color-nevada);
+	}
+
+	.shop-filters--is-open & {
+		z-index: 1005;
+		position: fixed;
+		top: 52px;
+	}
+
+	.shop-filters--is-open.admin-bar & {
+		top: calc(var(--spacer-wp-admin-mobile) + 52px);
+
+		@media (--viewport-wpadmin) {
+			top: calc(var(--spacer-wp-admin-desktop) + 52px);
+		}
+	}
+
+	&:focus {
+		outline: 1px dotted;
+	}
+}
+
+/* Trigger: Icon */
+.shop-filters__trigger-icon {
+	position: absolute;
+	right: var(--grid-gutter-small);
+	top: 50%;
+	line-height: 0;
+
+	@media (--viewport-medium) {
+		right: var(--grid-gutter);
+	}
+
+	/* CASE: mobile filters are open */
+	.shop-filters--is-open & {
+
+		&:before {
+			content: var(--icon-minus);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Reset
+ * ----------------------------------------------------------------------------- */
+
+.shop-filters__reset {
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 8px;
+	display: inline-block;
+	color: var(--color-jumbo);
+
+	&:visited {
+		color: var(--color-jumbo);
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--color-brown-rust);
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Sale
+ * ----------------------------------------------------------------------------- */
+
+.shop-filters__sale {
+	font-size: 20px;
+	font-weight: var(--font-weight-bold);
+	margin-top: 38px;
+
+	a {
+		color: var(--color-brown-rust);
+
+		&:visited {
+			color: var(--color-brown-rust);
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--color-apricot);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Filters: Filters / Widget
+ * ----------------------------------------------------------------------------- */
+
+.shop-filters__filter {
+	margin-top: 30px;
+
+	& ~ .shop-filters__filter {
+		margin-top: 38px;
+	}
+}
+
+.widget_layered_nav {
+
+	ul {
+
+	}
+
+	.wc-layered-nav-term {
+		@mixin clearfix;
+
+		font-size: 14px;
+		position: relative;
+
+		& ~ .wc-layered-nav-term {
+			margin-top: 15px;
+		}
+	}
+
+	/* CASE: chosen filter */
+	.chosen {
+
+		a {
+			font-weight: var(--font-weight-bold);
+			color: var(--form-control-radio-checkbox-label-color-checked);
+
+			&:visited {
+				color: var(--form-control-radio-checkbox-label-color-checked);
+			}
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	a {
+		position: relative;
+		padding: 3px 0 3px 32px;
+		color: var(--form-control-radio-checkbox-label-color);
+
+		&:visited {
+			color: var(--form-control-radio-checkbox-label-color);
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--form-control-radio-checkbox-label-color);
+		}
+
+		&:before,
+		&:after {
+			transition: var(--transition);
+			content: '';
+			position: absolute;
+		}
+
+		&:before {
+			background-color: var(--form-control-radio-checkbox-ui-bgd-color);
+			width: 20px;
+			height: 20px;
+			top: 0;
+			left: 0;
+			border: var(--form-control-radio-checkbox-ui-border-size) solid var(--form-control-radio-checkbox-ui-border-color);
+			border-radius: var(--form-control-checkbox-ui-border-radius);
+		}
+
+		&:after {
+			left: 6px;
+			top: 7px;
+			width: 9px;
+			height: 4px;
+			border: var(--form-control-checkbox-ui-border-size) solid var(--form-control-radio-checkbox-ui-color);
+			border-top: none;
+			border-right: none;
+			transform: rotate(-50deg);
+			opacity: 0;
+		}
+	}
+
+	.count {
+		color: var(--color-jumbo);
+		font-style: italic;
+		float: right;
+	}
+}
+
+.shop-filters__filter__title {
+	font-weight: var(--font-weight-bold);
+	font-size: 16px;
+	color: var(--color-nevada);
+	line-height: var(--line-height-12);
+	border-bottom: 1px solid var(--color-nevada-50);
+	padding-bottom: 5px;
+	padding-left: 4px;
+	margin-bottom: 24px;
+}

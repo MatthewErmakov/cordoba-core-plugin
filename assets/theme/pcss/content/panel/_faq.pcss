@@ -1,0 +1,146 @@
+.panel--type-faq {
+
+}
+
+/* CASE: Has Image */
+.panel--type-faq--has-image {
+
+}
+
+/* CASE: Has No Image */
+.panel--type-faq--has-no-image {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * FAQ: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-faq__wrapper {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * FAQ: Wrapper - Inner
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-faq__wrapper-inner {
+	/* CASE: Has Image */
+	.panel--type-faq--has-image & {
+		position: relative;
+		z-index: 1;
+
+		@media (--viewport-medium) {
+			display: flex;
+			width: 100%;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * FAQ: Media
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-faq__media {
+	position: relative;
+	border: 3px solid var(--color-nevada-50);
+	padding: 40px var(--grid-gutter-small) 20px;
+
+	@media (--viewport-medium) {
+		width: 40%;
+		padding: 30px 0 40px;
+		align-self: flex-start;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+
+		@media (--viewport-medium) {
+			position: relative;
+			right: -40px;
+		}
+
+		@media (--viewport-full) {
+			right: -50px;
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		background-color: var(--color-desert-storm);
+		left: -20px;
+		right: -20px;
+		top: 20px;
+		height: 100%;
+		z-index: -1;
+
+		@media (--viewport-medium) {
+			top: 15px;
+			left: -30px;
+			right: -30px;
+			height: auto;
+			bottom: 22px;
+		}
+
+		@media (--viewport-full) {
+			bottom: 32px;
+		}
+	}
+
+	/* CASE: Brush Stroke */
+	&:after {
+		@mixin brush-stroke-global;
+		@mixin brush-stroke-position-bottom-negative;
+		@mixin brush-stroke-bottom--desert-storm;
+
+		display: block;
+		width: auto;
+		z-index: -1;
+		bottom: -27px;
+		left: -20px;
+		right: -20px;
+
+		@media (--viewport-medium) {
+			bottom: 15px;
+			left: -30px;
+			right: -30px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * FAQ: Content
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-faq__content {
+	/* CASE: Has Image */
+	.panel--type-faq--has-image & {
+		margin-top: 35px;
+
+		@media (--viewport-medium) {
+			width: 60%;
+			margin-top: 0;
+			padding-left: 70px;
+			padding-top: 30px;
+		}
+
+		@media (--viewport-full) {
+			padding-left: 90px;
+			padding-top: 50px;
+		}
+
+		@media (--viewport-large) {
+			padding-left: 100px;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * FAQ: Title
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-faq__title {
+
+}

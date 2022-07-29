@@ -1,0 +1,19 @@
+.pagination--tribe-loop-filters {
+	/* Pagination: Items */
+	.pagination-loop__item {
+		/* CASE: Current list item */
+		&.pagination-loop__item--is-current {
+
+			a {
+				color: var(--color-brown-rust);
+			}
+		}
+
+		/* CASE: Disabled list item */
+		&.pagination-loop__item--is-disabled {
+			@media (--viewport-medium) {
+				display: none;
+			}
+		}
+	}
+}

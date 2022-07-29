@@ -1,0 +1,29 @@
+.c-card__image-wrapper {
+	background-color: var(--color-shark);
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: '185:162';
+
+	/* CASE: when image wrapper and image are same */
+	&.c-card__image {
+		position: relative;
+		min-height: 0;
+		margin: 0 auto;
+	}
+
+	/* CASE: simple style/layout - centered and no border */
+	.c-card--simple & {
+		background-color: transparent;
+
+		&:before {
+			/* AR: 27:40 */
+			padding-top: 148.14814814814815%;
+		}
+	}
+}
+
+.c-card__image {
+	@mixin background-image-prop;
+
+	transition: var(--transition-ease);
+}

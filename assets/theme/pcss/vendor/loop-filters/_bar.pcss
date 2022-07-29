@@ -1,0 +1,58 @@
+.tribe-loop-filters__bar {
+	margin-bottom: 32px;
+
+	@media (--viewport-small) {
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
+
+		/* align-items: center; */
+		align-items: flex-end;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Bar: Order By Selector
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__bar-orderby-selector {
+	@media (--viewport-small) {
+		max-width: 185px;
+
+		/* flex: 1; */
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Bar: Results Per Page Selector
+ * ----------------------------------------------------------------------------- */
+
+.tribe-loop-filters__bar-resultsperpage-selector {
+	margin-top: 20px;
+	overflow: hidden;
+
+	@media (--viewport-small) {
+		margin-top: 0;
+		overflow: visible;
+	}
+
+	.form-control-select {
+		width: 60px;
+		display: inline-block;
+		float: right;
+		vertical-align: middle;
+
+		@media (--viewport-small) {
+			float: none;
+		}
+	}
+}
+
+.tribe-loop-filters__bar-resultsperpage-count {
+	color: var(--color-jumbo);
+	font-style: italic;
+	font-size: 12px;
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: middle;
+}

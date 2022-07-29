@@ -1,0 +1,205 @@
+#ui-datepicker-div {
+	background: var(--jquery-datepicker-bgd-color);
+	border: 1px solid var(--form-border-color);
+	border-radius: 0;
+	width: auto;
+	font: var(--jquery-datepicker-font-style) var(--jquery-datepicker-font-weight) var(--jquery-datepicker-font-size) / var(--jquery-datepicker-line-height) var(--jquery-datepicker-font-family);
+
+	select {
+		padding: 0;
+		font-size: 15px;
+		font-weight: var(--font-weight-bold);
+		border: 0;
+		background-color: transparent;
+		display: inline-block;
+		width: auto;
+		height: auto;
+		color: var(--jquery-datepicker-color);
+	}
+
+	option {
+		color: var(--jquery-datepicker-color-option);
+	}
+
+	&.ui-datepicker {
+		padding: 0;
+	}
+
+	.ui-datepicker-header {
+		border: none;
+		background: transparent;
+		font-weight: normal;
+		font-size: 15px;
+	}
+
+	.ui-datepicker-header .ui-state-hover {
+		background: transparent;
+		border-color: transparent;
+		cursor: pointer;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+	}
+
+	&.ui-datepicker .ui-datepicker-title {
+		margin-top: 0.4em;
+		margin-bottom: 0.3em;
+		color: var(--jquery-datepicker-color);
+	}
+
+	&.ui-datepicker .ui-datepicker-prev-hover,
+	&.ui-datepicker .ui-datepicker-next-hover,
+	&.ui-datepicker .ui-datepicker-next,
+	&.ui-datepicker .ui-datepicker-prev {
+		top: 8px;
+		border: none;
+	}
+
+	&.ui-datepicker .ui-datepicker-prev,
+	&.ui-datepicker .ui-datepicker-prev-hover {
+		left: 10px;
+	}
+
+	&.ui-datepicker .ui-datepicker-next,
+	&.ui-datepicker .ui-datepicker-next-hover {
+		right: 10px;
+	}
+
+	&.ui-datepicker .ui-datepicker-next,
+	&.ui-datepicker .ui-datepicker-prev {
+
+		&:after {
+			@mixin icon;
+
+			transition: var(--transition);
+			position: absolute;
+			color: var(--jquery-datepicker-color);
+			font-size: 20px;
+			top: 3px;
+			left: 4px;
+			content: var(--icon-chevron-right);
+		}
+	}
+
+	&.ui-datepicker .ui-datepicker-prev {
+
+		&:after {
+			left: auto;
+			right: 4px;
+			content: var(--icon-chevron-left);
+		}
+	}
+
+	&.ui-datepicker .ui-datepicker-prev-hover,
+	&.ui-datepicker .ui-datepicker-next-hover {
+
+		&:after {
+			color: var(--color-bali-hai);
+		}
+	}
+
+	&.ui-datepicker .ui-datepicker-next span,
+	&.ui-datepicker .ui-datepicker-prev span {
+		background: none;
+	}
+
+	/*
+	&.ui-datepicker .ui-datepicker-next span,
+	&.ui-datepicker .ui-datepicker-prev span {
+		background: none;
+		margin-top: 0;
+		top: 0;
+		font-weight: normal;
+		text-indent: 0;
+
+		&:after {
+			@mixin icon;
+
+			transition: var(--transition);
+			position: absolute;
+			color: var(--jquery-datepicker-color);
+			font-size: 20px;
+			top: -1px;
+			left: 0;
+			content: var(--icon-chevron-right);
+		}
+	}
+
+	&.ui-datepicker .ui-datepicker-prev span {
+
+		&:after {
+			left: auto;
+			right: 0;
+			content: var(--icon-chevron-left);
+		}
+	}
+
+	&.ui-datepicker .ui-datepicker-prev-hover,
+	&.ui-datepicker .ui-datepicker-next-hover {
+
+		span {
+
+			&:after {
+				color: var(--color-bali-hai);
+			}
+		}
+	}
+	*/
+
+	&.ui-datepicker table {
+		margin: 0;
+		background-color: transparent;
+		table-layout: auto;
+	}
+
+	tbody {
+		background: var(--jquery-datepicker-bgd-color-secondary);
+	}
+
+	&.ui-datepicker th {
+		padding: 10px 0;
+		color: var(--color-bombay);
+		border: 0;
+		background-color: transparent;
+		font-size: 13px;
+		line-height: 1;
+	}
+
+	&.ui-datepicker tr {
+		border: none;
+		background-color: var(--jquery-datepicker-bgd-color-tertiary);
+	}
+
+	&.ui-datepicker td {
+		background: var(--jquery-datepicker-bgd-color-quaternary);
+		border: none;
+		padding: 0;
+		line-height: 1;
+	}
+
+	td .ui-state-default {
+		background: transparent;
+		border: none;
+		text-align: center;
+		margin: 0;
+		color: var(--jquery-datepicker-color);
+		font-size: 16px;
+		padding: 12px;
+		line-height: 1;
+	}
+
+	.ui-state-disabled {
+		opacity: 1;
+	}
+
+	.ui-state-disabled .ui-state-default {
+		color: var(--jquery-datepicker-color-disabled);
+	}
+
+	td .ui-state-active,
+	td .ui-state-hover {
+		background: var(--jquery-datepicker-bgd-color-active);
+		font-weight: var(--font-weight-bold);
+		color: var(--color-white);
+	}
+}

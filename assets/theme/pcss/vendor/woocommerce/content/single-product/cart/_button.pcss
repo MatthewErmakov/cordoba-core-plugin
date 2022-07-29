@@ -1,0 +1,24 @@
+a.single_add_to_cart_button,
+.single_add_to_cart_button {
+	background-color: var(--color-mojo);
+	color: var(--color-white);
+	border-color: var(--color-mojo);
+	margin-right: 25px;
+	width: 100%;
+
+	@media (--viewport-medium) {
+		width: auto;
+	}
+
+	&:visited {
+		color: var(--color-white);
+		background-color: var(--color-mojo);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--color-brown-rust);
+		border-color: var(--color-brown-rust);
+	}
+}

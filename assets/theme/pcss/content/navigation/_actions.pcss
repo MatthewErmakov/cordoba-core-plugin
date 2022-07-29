@@ -1,0 +1,227 @@
+.nav-primary__action {
+	transition: var(--transition);
+	background-color: var(--color-white);
+	font-weight: var(--font-weight-medium);
+	font-size: 16px;
+	display: inline-block;
+	line-height: var(--line-height-115);
+	color: var(--color-mako);
+	border: 0;
+	text-align: left;
+	z-index: 1;
+	position: relative;
+	cursor: pointer;
+
+	&:visited {
+		color: var(--color-mako);
+
+		@media (--viewport-full) {
+			color: var(--color-white);
+		}
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--color-brown-rust);
+	}
+
+	@media (--viewport-full) {
+		background-color: transparent;
+		font-size: 14px;
+		color: var(--color-white);
+	}
+
+	/* CASE: child menu active & scrolled in */
+	.nav-primary__list-child--depth-0--active &,
+	.site-header--has-scrolled-in & {
+		@media (--viewport-full) {
+			color: var(--color-mako);
+		}
+
+		&:visited {
+			@media (--viewport-full) {
+				color: var(--color-mako);
+			}
+		}
+
+		&:hover,
+		&:focus {
+			@media (--viewport-full) {
+				color: var(--color-brown-rust);
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Navigation - Primary Nav: Action - top-level @ 0
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--depth-0 {
+	padding: 19px var(--grid-gutter-small) 16px;
+	width: 100%;
+
+	@media (--viewport-full) {
+		padding: 18px 12px 11px;
+	}
+
+	@media (--viewport-large) {
+		padding-bottom: 27px;
+	}
+
+	/* CASE: child menu active & scrolled in */
+	.nav-primary__list-child--depth-0--active &,
+	.site-header--has-scrolled-in & {
+		@media (--viewport-full) {
+			padding-bottom: 27px;
+		}
+	}
+
+	/* CASE: action is child menu trigger */
+	&.nav-primary__action--has-children {
+		padding-right: calc(var(--spacer-site-header-mobile) + 10px);
+
+		@media (--viewport-full) {
+			padding-right: 12px;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	.nav-primary__list-item--is-current-parent &,
+	.nav-primary__list-item--is-current &,
+	.nav-primary__list-item--child-active & {
+		color: var(--color-brown-rust);
+
+		/* CASE: child menu active & scrolled in */
+		.nav-primary__list-child--depth-0--active &,
+		.site-header--has-scrolled-in & {
+
+			&:after {
+				@media (--viewport-full) {
+					background-color: var(--color-brown-rust);
+				}
+			}
+		}
+	}
+
+	&:after {
+		/* CASE: child menu active & scrolled in */
+		.nav-primary__list-item--is-current-parent &,
+		.nav-primary__list-item--is-current &,
+		.nav-primary__list-child--depth-0--active &,
+		.site-header--has-scrolled-in & {
+			@media (--viewport-full) {
+				content: '';
+				position: absolute;
+				display: block;
+				transition: var(--transition-bgd-color);
+				height: 6px;
+				bottom: -1px;
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	.nav-primary__list-item--is-current-parent &,
+	.nav-primary__list-item--is-current & {
+		@media (--viewport-full) {
+			color: var(--color-white);
+		}
+
+		&:after {
+			@media (--viewport-full) {
+				background-color: var(--color-white);
+				height: 3px;
+				bottom: 0;
+			}
+
+			@media (--viewport-large) {
+				bottom: 12px;
+			}
+		}
+
+		/* CASE: child menu active & scrolled in */
+		.nav-primary__list-child--depth-0--active &,
+		.site-header--has-scrolled-in & {
+			@media (--viewport-full) {
+				color: var(--color-brown-rust);
+			}
+
+			&:after {
+				@media (--viewport-full) {
+					height: 6px;
+					bottom: -1px;
+				}
+			}
+		}
+	}
+}
+
+/* Icon */
+.nav-primary__icon-child-nav {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: var(--spacer-site-header-mobile);
+	text-align: center;
+	line-height: 55px;
+	font-size: 24px;
+
+	@media (--viewport-full) {
+		display: inline-block;
+		height: auto;
+		width: auto;
+		line-height: 0;
+		position: relative;
+		top: 3px;
+		font-size: 18px;
+		margin-left: 2px;
+	}
+
+	/* CASE: This Top-level child menu active */
+	.nav-primary__list-item--child-active & {
+
+		&:before {
+			content: var(--icon-angle-up);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Navigation - Primary Nav: Action - 2nd-level @ 1
+ * ----------------------------------------------------------------------------- */
+
+.nav-primary__action--depth-1 {
+	font-size: 14px;
+	padding: 4px 0 4px 20px;
+
+	@media (--viewport-full) {
+		color: var(--color-mako);
+	}
+
+	&:visited {
+		@media (--viewport-full) {
+			color: var(--color-mako);
+		}
+	}
+
+	&:hover,
+	&:focus {
+		@media (--viewport-full) {
+			color: var(--color-brown-rust);
+		}
+	}
+
+	&:before {
+		@mixin icon;
+
+		content: var(--icon-angle-double-right);
+		position: absolute;
+		left: 0;
+		font-size: 15px;
+	}
+}

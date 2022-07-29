@@ -1,0 +1,175 @@
+
+/* -----------------------------------------------------------------------------
+ * Media: Images
+ * ----------------------------------------------------------------------------- */
+
+img {
+	margin-left: auto;
+	margin-right: auto;
+
+	.t-content &,
+	&.u-image-reset {
+		line-height: 0;
+		height: auto;
+		display: block;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Media: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.wp-image {
+	width: auto !important;
+	max-width: none;
+	margin: 0 auto;
+	text-align: center;
+
+	a {
+		display: inline-block;
+	}
+}
+
+.wp-image--no-caption {
+
+}
+
+.wp-image--caption {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Media: Image Decor (project specific)
+ * ----------------------------------------------------------------------------- */
+
+.wp-image--decor {
+	display: inline-block;
+	position: relative;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 100%;
+
+	@media (--viewport-medium) {
+		padding-top: 25px;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	/* CASE: Aligned left */
+	.alignleft & {
+		@media (--viewport-medium) {
+			padding-right: 0;
+		}
+	}
+
+	/* CASE: Aligned right */
+	.alignright & {
+		@media (--viewport-medium) {
+			padding-left: 0;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 30px;
+		border: 3px solid var(--color-nevada-50);
+
+		@media (--viewport-medium) {
+			bottom: 55px;
+		}
+
+		/* CASE: Aligned left */
+		.alignleft & {
+			@media (--viewport-medium) {
+				right: 25px;
+				bottom: 25px;
+			}
+		}
+
+		/* CASE: Aligned right */
+		.alignright & {
+			@media (--viewport-medium) {
+				left: 25px;
+				bottom: 25px;
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Media: Image Captions
+ * ----------------------------------------------------------------------------- */
+
+.wp-caption-text {
+	@mixin media-caption;
+
+	/* CASE: align left or right */
+	.alignleft &,
+	.alignright & {
+		@media (--viewport-medium) {
+			text-align: left;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Media: Alignments
+ * ----------------------------------------------------------------------------- */
+
+.aligncenter,
+.alignnone {
+	margin: var(--spacer-m) auto;
+
+	@media (--viewport-medium) {
+		margin: 40px auto;
+	}
+}
+
+.alignleft,
+.alignright {
+	margin-top: var(--spacer-m);
+	margin-bottom: var(--spacer-m);
+
+	@media (--viewport-medium) {
+		margin-top: 5px;
+		max-width: var(--grid-width-470);
+	}
+}
+
+.alignleft {
+	@media (--viewport-medium) {
+		float: left;
+		margin-right: var(--grid-gutter);
+	}
+}
+
+.alignright {
+	@media (--viewport-medium) {
+		float: right;
+		margin-left: var(--grid-gutter);
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Media: Lazyloading of Images
+ * ----------------------------------------------------------------------------- */
+
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+
+.lazyloaded {
+	opacity: 1;
+	transition: var(--transition-opacity);
+}
+

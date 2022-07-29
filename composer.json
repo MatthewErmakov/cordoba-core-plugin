@@ -1,0 +1,26 @@
+{
+  "name": "moderntribe/core-plugin",
+  "type": "project",
+  "description": "Core functionality for this site.",
+  "license": "Private",
+  "config": {
+    "vendor-dir": "vendor",
+    "preferred-install": "dist"
+  },
+  "require": {
+    "pimple/pimple": "~3.0@dev",
+    "johnbillion/extended-cpts": "^3.0",
+    "johnbillion/extended-taxos": "^2.0",
+    "twig/twig": "2.3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tribe\\Project\\": "src/",
+      "Tribe\\Libs\\": "vendor/moderntribe/tribe-libs/src/"
+    }
+  },
+  "require-dev": {
+    "lucatume/wp-browser": "^1.9",
+    "lucatume/function-mocker": "~1.0"
+  }
+}

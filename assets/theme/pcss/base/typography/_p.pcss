@@ -1,0 +1,11 @@
+p {
+	@mixin body-content;
+
+	.t-content & {
+		margin-bottom: var(--spacer-s);
+
+		@media (--viewport-medium) {
+			margin-bottom: var(--spacer);
+		}
+	}
+}

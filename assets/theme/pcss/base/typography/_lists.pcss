@@ -1,0 +1,83 @@
+
+/* -------------------------------------------------------------------------
+ * Global Lists
+ * ------------------------------------------------------------------------- */
+
+ul,
+ol,
+dl {
+
+	.t-content & {
+		@mixin body-content;
+
+		margin-top: 25px;
+		margin-bottom: 30px;
+	}
+}
+
+li {
+
+	.t-content & {
+		padding-left: 4px;
+
+		@media (--viewport-medium) {
+			padding-left: 15px;
+		}
+	}
+
+	& ~ li {
+
+		.t-content & {
+			margin-top: 10px;
+		}
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * UL
+ * ------------------------------------------------------------------------- */
+
+.list-bullet,
+.t-content ul {
+	list-style: disc outside;
+	padding-left: var(--grid-gutter-small);
+
+	@media (--viewport-medium) {
+		padding-right: var(--grid-gutter-small);
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * OL
+ * ------------------------------------------------------------------------- */
+
+.list-number,
+.t-content ol {
+	list-style: decimal outside;
+	padding-left: var(--grid-gutter-small);
+
+	@media (--viewport-medium) {
+		padding-right: var(--grid-gutter-small);
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * DL
+ * ------------------------------------------------------------------------- */
+
+.dl,
+.t-content dl {
+
+}
+
+.dt,
+.t-content dt {
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-125);
+	margin-bottom: 4px;
+}
+
+.dd,
+.t-content dd {
+	margin-bottom: 15px;
+}

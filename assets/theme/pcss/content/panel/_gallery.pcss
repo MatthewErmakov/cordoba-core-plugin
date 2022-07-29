@@ -1,0 +1,238 @@
+.panel--type-gallery {
+
+}
+
+/* CASE: Layout Left */
+.panel--type-gallery--layout-left {
+
+}
+
+/* CASE: Layout Center */
+.panel--type-gallery--layout-center {
+
+}
+
+/* CASE: Layout Right */
+.panel--type-gallery--layout-right {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Gallery: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-gallery__wrapper {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Gallery: Content Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-gallery__content {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Gallery: Item - Stamp
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-gallery__stamp {
+	width: 100%;
+	padding: 0 23px 45px;
+
+	@media (--viewport-medium) {
+		padding: 0 33px 60px;
+	}
+
+	@media (--viewport-full) {
+		position: absolute;
+		padding: 30px 3px 60px;
+		width: 50%;
+	}
+
+	@media (--viewport-xlarge) {
+		width: 40%;
+	}
+
+	/* CASE: Layout Left */
+	.panel--type-gallery--layout-left & {
+		@media (--viewport-full) {
+			left: 0;
+		}
+	}
+
+	/* CASE: Layout Center */
+	.panel--type-gallery--layout-center & {
+		@media (--viewport-full) {
+			left: 25%;
+		}
+
+		@media (--viewport-xlarge) {
+			left: 40%;
+		}
+	}
+
+	/* CASE: Layout Right */
+	.panel--type-gallery--layout-right & {
+		@media (--viewport-full) {
+			right: 0;
+		}
+	}
+}
+
+/* Stamp Title */
+.panel--type-gallery__title {
+
+}
+
+/* Stamp Link */
+.panel--type-gallery__link {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Gallery: Item
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-gallery__item {
+	padding: 3px;
+
+	@media (--viewport-medium) {
+		width: 33.33%;
+		float: left;
+	}
+
+	@media (--viewport-full) {
+		width: 25%;
+	}
+
+	@media (--viewport-xlarge) {
+		width: 20%;
+	}
+
+	/* CASE: item is landscape */
+	&.panel--type-gallery__item--is-landscape {
+
+		&:nth-child(even) {
+			@media (--viewport-medium) {
+				width: 66.66%;
+			}
+
+			@media (--viewport-full) {
+				width: 50%;
+			}
+
+			@media (--viewport-xlarge) {
+				width: 40%;
+			}
+		}
+	}
+
+	/* CASE: item is portrait */
+	&.panel--type-gallery__item--is-portrait {
+		/*
+		&:nth-child(even) {
+			@media (--viewport-medium) {
+				width: 66.66%;
+			}
+
+			@media (--viewport-full) {
+				width: 50%;
+			}
+
+			@media (--viewport-xlarge) {
+				width: 40%;
+			}
+		}
+		*/
+	}
+}
+
+/* Item Media */
+.panel--type-gallery__item-media {
+	@mixin background-image-prop;
+}
+
+/* Item Wrapper */
+.panel--type-gallery__item-wrapper {
+	position: relative;
+	overflow: hidden;
+
+	/* CASE: has title */
+	.panel--type-gallery__item--has-title & {
+
+		&:hover,
+		&:focus {
+
+			&:after {
+				opacity: 1;
+			}
+
+			.panel--type-gallery__item-content {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: var(--color-black-6);
+			opacity: 0;
+			transition: var(--transition-opacity);
+		}
+	}
+}
+
+/* Item Wrapper - Anchor */
+.panel--type-gallery__item-anchor {
+	display: block;
+}
+
+/* Item Wrapper Inner */
+.panel--type-gallery__item-wrapper-inner {
+
+}
+
+/* Item Content */
+.panel--type-gallery__item-content {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: var(--color-white);
+	padding: 20px;
+	opacity: 0;
+	transition: var(--transition-ease);
+	transform: translateY(15px);
+
+	@media (--viewport-medium) {
+		position: absolute;
+		padding: 30px;
+	}
+}
+
+/* Item Title */
+.panel--type-gallery__item-title {
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-115);
+	font-size: 14px;
+
+	@media (--viewport-medium) {
+		font-size: 15px;
+	}
+
+	@media (--viewport-full) {
+		font-size: 16px;
+	}
+}

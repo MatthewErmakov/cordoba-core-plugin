@@ -1,0 +1,85 @@
+/* -----------------------------------------------------------------------------
+ * Layout: 2 Columns - 50% | 50% (tweaking WC's)
+ * ----------------------------------------------------------------------------- */
+
+.col2-set {
+
+	.col-1,
+	.col-2 {
+		float: none;
+		width: 100%;
+
+		@media (--viewport-full) {
+			width: 50%;
+		}
+	}
+
+	.col-1 {
+		@media (--viewport-full) {
+			float: left;
+			padding-right: var(--grid-gutter-half);
+		}
+
+		& + .col-2 {
+			margin-top: 32px;
+
+			@media (--viewport-full) {
+				margin-top: 0;
+			}
+
+			/* CASE: Checkout - Shipping */
+			&.woocommerce-shipping-fields {
+				margin-top: 44px;
+
+				@media (--viewport-full) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	.col-2 {
+		@media (--viewport-full) {
+			float: right;
+			padding-left: var(--grid-gutter-half);
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Layout: 3 Columns - 33.33% | 33.33% | 33.33% (custom)
+ * ----------------------------------------------------------------------------- */
+
+.col3-set {
+	@media (--viewport-medium) {
+		@mixin clearfix;
+
+		margin-left: var(--grid-gutter-half-negative);
+		margin-right: var(--grid-gutter-half-negative);
+	}
+
+	.col-1,
+	.col-2,
+	.col-3 {
+		float: none;
+		width: 100%;
+
+		@media (--viewport-medium) {
+			float: left;
+			width: 33.33%;
+			padding-left: var(--grid-gutter-half);
+			padding-right: var(--grid-gutter-half);
+		}
+	}
+
+	.col-1 {
+
+		& ~ * {
+			margin-top: 32px;
+
+			@media (--viewport-medium) {
+				margin-top: 0;
+			}
+		}
+	}
+}

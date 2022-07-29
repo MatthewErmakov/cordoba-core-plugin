@@ -1,0 +1,47 @@
+.woocommerce-checkout .login {
+
+	p:first-child {
+		max-width: 625px;
+		margin-bottom: 25px;
+	}
+
+	.lost_password {
+		margin-top: -10px;
+		margin-bottom: 0;
+		font-size: 15px;
+
+		@media (--viewport-medium) {
+			margin-top: 0;
+			float: right;
+			position: relative;
+			top: 24px;
+		}
+	}
+
+	/* Wrapper around submit and remember checkbox */
+	.clear + p {
+		@media (--viewport-medium) {
+			display: inline-block;
+			margin-bottom: 0;
+		}
+	}
+
+	input[name="login"] {
+		margin-top: 0 !important;
+		width: 100%;
+
+		@media (--viewport-medium) {
+			margin-right: 20px;
+			width: auto;
+		}
+	}
+
+	.form-control-checkbox {
+		margin-top: 28px;
+
+		@media (--viewport-medium) {
+			margin-top: 0;
+			display: inline-block;
+		}
+	}
+}

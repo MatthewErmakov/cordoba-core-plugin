@@ -1,0 +1,118 @@
+/* -----------------------------------------------------------------------------
+ *
+ * Component: Cards
+ *
+ * Note: Overall structure should be utilized as laid out below, but actual
+ * html tags are up to you, this is just base structure and classes.
+ *
+ * Examples:
+ * + Blog loop
+ * + Dynamic query panel
+ * + Similar posts
+ *
+ * ----------------------------------------------------------------------------- */
+
+.c-card {
+	@mixin clearfix;
+
+	text-align: left;
+}
+
+/* CASE: simple style/layout - centered and no border */
+.c-card--simple {
+
+}
+
+/* CASE: simple style/layout refined for mobile */
+.c-card--simple-mobile-refined {
+
+}
+
+/* CASE: simple style/layout - animated in content on hover/focus */
+.c-card--simple--animated-meta {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Card: Wrapper - Outer
+ * ----------------------------------------------------------------------------- */
+
+.c-card__wrapper {
+	display: block;
+	position: relative;
+	height: 100%;
+
+	@media (--viewport-medium) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* CASE: simple style/layout - centered and no border */
+	.c-card--simple & {
+		padding-top: 15px;
+	}
+}
+
+/* CASE: outer wrapper as anchor */
+.c-card__anchor {
+	transition: var(--transition-ease);
+	margin-left: auto;
+	margin-right: auto;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.18);
+
+		/* CASE: image */
+		.c-card__image {
+			opacity: 0.9;
+		}
+
+		/* CASE: title */
+		.c-card__title {
+			color: var(--color-brown-rust);
+		}
+
+		/* CASE: action */
+		.c-card__action {
+			color: var(--color-jumbo);
+			animation: bump-right 350ms var(--ease-out-sine);
+		}
+
+		/* CASE: animated meta */
+		.c-card__animate-in-on-hover {
+			@media (--viewport-full) {
+				height: auto;
+				overflow: auto;
+				opacity: 1;
+				transition: var(--transition-ease);
+			}
+		}
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Card: Wrapper - Animated Content/Meta
+ * ----------------------------------------------------------------------------- */
+
+.c-card__animate-in-on-hover {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	height: 0;
+	transition: none;
+	opacity: 0;
+	background-color: var(--color-white);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+	padding: 0 20px 35px;
+	width: 100%;
+	top: calc(100% - 4px);
+	left: 0;
+	right: 0;
+	z-index: 2;
+
+	@media (--viewport-full) {
+		display: block;
+		padding: 0 25px 35px;
+	}
+}

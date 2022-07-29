@@ -1,0 +1,24 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^6.0.39"
+  },
+  "dependencies": {
+    "a11y-dialog": "^7.3.0",
+    "delegate": "^3.2.0",
+    "gsap": "^3.8.0",
+    "packery": "^2.1.2",
+    "spin.js": "^4.1.1",
+    "swiper": "^7.2.0",
+    "verge": "^1.10.2"
+  }
+}

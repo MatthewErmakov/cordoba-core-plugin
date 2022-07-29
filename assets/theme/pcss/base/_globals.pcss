@@ -1,0 +1,60 @@
+/* -----------------------------------------------------------------------------
+ *
+ * Globals: HTML & Body
+ *
+ * ----------------------------------------------------------------------------- */
+
+html {
+	background: var(--color-bgd);
+}
+
+body {
+	background: var(--color-bgd-content);
+
+	/* CASE: "sticky" footer
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	*/
+
+	/* CASE: deal with IE sticky footer bug
+	&.browser-ie {
+		display: block;
+	}
+	*/
+
+	/* CASE: mobile navigation is active / widget dialog is active */
+	&.site-navigation--is-open,
+	&.widget-dialog--is-open {
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Globals: Font & Color
+ *
+ * ----------------------------------------------------------------------------- */
+
+body,
+form,
+button,
+input,
+select,
+textarea {
+	font: var(--font-weight-regular) normal 100%/var(--line-height-base) var(--font-family-base);
+	color: var(--color-text);
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Globals: Text Selection
+ *
+ * ----------------------------------------------------------------------------- */
+
+::selection {
+	background: var(--color-shark);
+	color: var(--color-cadet-blue);
+	text-shadow: none;
+}

@@ -1,0 +1,100 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Button: Text
+ *
+ * Notes:
+ * + Has no background color and arrow icon
+ * + On hover/focus animate text color
+ *
+ * Example:
+ * <button class="button-text">...</button>
+ * <a href="#" class="button-text">...</a>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.button-text,
+a.button-text {
+	@mixin button-global;
+
+	color: var(--color-brown-rust);
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: var(--letter-spacing-04);
+	padding: 16px 0 14px;
+
+	@media (--viewport-medium) {
+		font-size: 18px;
+		letter-spacing: var(--letter-spacing-05);
+		padding: 21px 0 19px;
+	}
+
+	&:visited {
+		color: var(--color-brown-rust);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--color-apricot);
+
+		&:after {
+			animation: bump-right 350ms var(--ease-out-sine);
+			color: var(--color-jumbo);
+		}
+	}
+
+	&:active,
+	&:focus {
+		outline: 1px dotted;
+	}
+
+	&:after {
+		@mixin icon;
+
+		content: var(--icon-arrow-right-decor);
+		color: var(--color-iron-alt-alt);
+		font-size: 40px;
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		bottom: 2px;
+		line-height: 0;
+		transition: var(--transition-ease);
+
+		@media (--viewport-medium) {
+			font-size: 54px;
+			bottom: 3px;
+		}
+	}
+}
+
+/* Button: Small */
+.button-text--small,
+a.button-text--small {
+	padding: 10px 0 8px;
+
+	@media (--viewport-medium) {
+		padding: 15px 0 13px;
+	}
+}
+
+/* Button: White */
+.button-text--white,
+a.button-text--white {
+	color: var(--color-white);
+
+	&:visited {
+		color: var(--color-white);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--color-apricot);
+
+		&:after {
+			color: var(--color-apricot);
+		}
+	}
+}

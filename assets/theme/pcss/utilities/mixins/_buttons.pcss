@@ -1,0 +1,59 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Global Button Resets
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin button-global {
+	transition: var(--transition);
+	width: auto;
+	display: inline-block;
+	line-height: var(--line-height-1);
+	font-weight: var(--font-weight-bold);
+	height: auto;
+	cursor: pointer;
+	text-decoration: none;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* -----------------------------------------------------------------------------
+ *
+ * Button Submit
+ *
+ * ----------------------------------------------------------------------------- */
+
+@define-mixin button-submit {
+	@mixin button-global;
+
+	font-size: 15px;
+	text-align: center;
+	background-color: var(--color-mako-alt);
+	color: var(--color-white);
+	letter-spacing: var(--letter-spacing-04);
+	padding: 21px 3em 19px;
+	text-transform: uppercase;
+
+	@media (--viewport-medium) {
+		letter-spacing: var(--letter-spacing-05);
+		padding: 21px 5em 19px;
+	}
+
+	&:visited {
+		color: var(--color-white);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--color-white);
+		background-color: var(--color-nevada);
+	}
+
+	&:active,
+	&:focus {
+		outline: 1px dotted;
+	}
+}

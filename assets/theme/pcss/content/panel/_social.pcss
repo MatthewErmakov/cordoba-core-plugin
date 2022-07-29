@@ -1,0 +1,70 @@
+.panel--type-social {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Social: Wrapper
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-social__wrapper {
+
+}
+
+/* -----------------------------------------------------------------------------
+ * Social: Slider
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-social__slider-wrapper {
+	position: relative;
+	padding-left: 12px;
+	padding-right: 12px;
+
+	@media (--viewport-medium) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media (--viewport-xlarge) {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		/* CASE: inline buttons */
+		.swiper-buttons--inline & {
+			margin-top: -60px;
+
+			@media (--viewport-medium) {
+				margin-top: -85px;
+			}
+
+			@media (--viewport-xxlarge) {
+				margin-top: -95px;
+			}
+		}
+	}
+}
+
+.panel--type-social__slider {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 40px;
+
+	@media (--viewport-medium) {
+		padding-bottom: 55px;
+	}
+}
+
+/* -----------------------------------------------------------------------------
+ * Social: Slide
+ * ----------------------------------------------------------------------------- */
+
+.panel--type-social__slide {
+
+	.wp-embed-lazy__caption {
+		@media (--viewport-medium) {
+			font-size: 18px;
+		}
+	}
+}

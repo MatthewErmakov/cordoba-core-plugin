@@ -1,0 +1,61 @@
+
+/* -----------------------------------------------------------------------------
+ *
+ * Layout: 3 Up Special (used for card grid panel grid layout and
+ * special instrument refinements)
+ *
+ * Example:
+ * <div class="l-wrapper">
+ *   <div class="l-3up-special">
+ *     ...
+ *   </div>
+ * </div>
+ *
+ * ----------------------------------------------------------------------------- */
+
+.l-3up-special {
+	@media (--viewport-medium) {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: var(--grid-gutter-half-negative);
+		margin-right: var(--grid-gutter-half-negative);
+	}
+
+	& > * {
+		margin-bottom: 35px;
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media (--viewport-medium) {
+			flex: 0 0 33.33%;
+			padding-left: var(--grid-gutter-half);
+			padding-right: var(--grid-gutter-half);
+			margin-bottom: 58px;
+			max-width: 33.33%;
+		}
+	}
+}
+
+.l-3up-special--mobile-refined {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: var(--grid-gutter-small-half-negative);
+	margin-right: var(--grid-gutter-small-half-negative);
+
+	& > * {
+		flex: 0 0 50%;
+		padding-left: var(--grid-gutter-small-half);
+		padding-right: var(--grid-gutter-small-half);
+		max-width: 150px;
+		margin-bottom: 10px;
+
+		@media (--viewport-medium) {
+			flex: 0 0 33.33%;
+			padding-left: var(--grid-gutter-half);
+			padding-right: var(--grid-gutter-half);
+			margin-bottom: 58px;
+			max-width: 33.33%;
+		}
+	}
+}
