@@ -21,6 +21,7 @@ class Exclusive_Meta extends Instrument_Meta {
 		$group->add_field( $this->get_swatch_image() );
 		$group->add_field( $this->get_swatch_label() );
 		$group->add_field( $this->get_dealer_repeater() );
+		$group->add_field( $this->get_priority() );
 
 		return $group->get_attributes();
 	}

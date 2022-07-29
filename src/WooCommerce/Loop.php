@@ -56,8 +56,6 @@ class Loop {
 					'type'    => 'numeric'
 				],
 			] );
-			
-			print_r($query);
 		}
 
 	}

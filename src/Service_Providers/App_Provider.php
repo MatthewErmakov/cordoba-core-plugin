@@ -35,6 +35,10 @@ class App_Provider implements ServiceProviderInterface {
 			$container[ 'archive' ]->set_posts_per_page( $query );
 		}, 10, 1 );
 
+		add_action( 'pre_get_posts', function ( \WP_Query $query ) use ( $container ) {
+			$container[ 'archive' ]->sort_by_priority( $query );
+		}, 11, 1 );
+
 		add_action( 'init', function () use ( $container ) {
 			$container[ 'archive' ]->add_rewrite_for_hash();
 		} );

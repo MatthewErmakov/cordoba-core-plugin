@@ -28,6 +28,7 @@ class Instrument_Meta extends ACF_Meta_Group {
 	const DEALERS_URL = 'dealers_url';
 	const DEALERS_IMAGE = 'dealers_image';
 	const ELECTRONICS = 'cordoba_electronics';
+
     const PRIORITY = 'priority';
 
 	const DESCRIPTION_MAX = 500;
@@ -259,6 +260,7 @@ class Instrument_Meta extends ACF_Meta_Group {
 			'label'         => esc_html__( 'Prority', 'tribe' ),
 			'name'          => self::PRIORITY,
 			'type'          => 'number',
+			'default_value' => 0
 		] );
 
 		return $field;

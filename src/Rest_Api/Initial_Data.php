@@ -12,7 +12,8 @@ class Initial_Data {
 	 */
 	public function get_post_data( $posts = null ){
 		if( $posts === null && !is_404() ){
-			$posts = $GLOBALS[ 'wp_query' ]->posts;
+			global $wp_query;
+			$posts = $wp_query->posts;
 		}
 		global $wp_rest_server;
 		if( empty( $wp_rest_server ) ){
@@ -23,7 +24,8 @@ class Initial_Data {
 		$data                 = [];
 		$request              = new \WP_REST_Request();
 		$request[ 'context' ] = 'view';
-		foreach( (array) $posts as $post ){
+
+		foreach( (array) $posts as $key => $post ){
 			$controller = new \WP_REST_Posts_Controller( $post->post_type );
 			$data[]     = $wp_rest_server->response_to_data( $controller->prepare_item_for_response( $post, $request ), true );
 		}
